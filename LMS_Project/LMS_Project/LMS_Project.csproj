@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\test.cs" />
     <Compile Include="Forms\Dashboard-Staff.cs">
       <SubType>Form</SubType>
@@ -70,6 +71,30 @@
     </Compile>
     <Compile Include="Forms\Login-Form.Designer.cs">
       <DependentUpon>Login-Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Staff-Book-Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Staff-Book-Form.Designer.cs">
+      <DependentUpon>Staff-Book-Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Staff-Member-Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Staff-Member-Form.Designer.cs">
+      <DependentUpon>Staff-Member-Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User-Book-Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User-Book-Form.Designer.cs">
+      <DependentUpon>User-Book-Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User-Member-Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User-Member-Form.Designer.cs">
+      <DependentUpon>User-Member-Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
