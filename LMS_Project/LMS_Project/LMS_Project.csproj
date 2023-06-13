@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\test.cs" />
     <Compile Include="Forms\Dashboard-Staff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,7 +96,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\" />
     <Folder Include="DataBase\" />
     <Folder Include="Images\" />
   </ItemGroup>
