@@ -16,5 +16,15 @@ namespace LMS_Project.Forms
         {
             InitializeComponent();
         }
+
+        private void Login_Form_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
