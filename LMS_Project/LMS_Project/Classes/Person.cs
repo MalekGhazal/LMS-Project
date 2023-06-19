@@ -15,13 +15,12 @@ namespace LMS_Project.Classes
         private string email;
         private string username;
         private string password;
-        private string role;
 
 
         public Person()
         {
         }
-        public Person(int id, string lastName, string firstName, string phone, string email, string username, string password, string role)
+        public Person(int id, string lastName, string firstName, string phone, string email, string username, string password)
         {
             this.id = id;
             this.lastName = lastName;
@@ -30,7 +29,6 @@ namespace LMS_Project.Classes
             this.email = email;
             this.username = username;
             this.password = password;
-            this.role = role;
         }
         public int Id { get => id; set => id = value; }
         public string LastName { get => lastName; set => lastName = value; }
@@ -39,33 +37,32 @@ namespace LMS_Project.Classes
         public string Email { get => email; set => email = value; }
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
-        public string Role { get => role; set => role = value; }
 
-        public bool login(string username, string password) 
+        public void login(string username, string password) 
         {
-            return true;
-        }
-
-        public bool logOut(string username)
-        {
-            return true;
+            
         }
 
-        public bool searchBookById(string bookId)
+        public void logOut(string username)
         {
-            return false;
+           
         }
-        public bool searchBookByTitle(string title)
+
+        public Book searchBookById(string bookId)
         {
-            return false;
+            return null;
         }
-        public bool searchBookByISBN(string ISBN)
+        public Book searchBookByTitle(string title)
         {
-            return false;
+            return null;
         }
-        public bool searchBookByAuthor(string author)
+        public Book searchBookByISBN(string ISBN)
         {
-            return false;
+            return null;
+        }
+        public Book searchBookByAuthor(string author)
+        {
+            return null;
         }
 
     }
