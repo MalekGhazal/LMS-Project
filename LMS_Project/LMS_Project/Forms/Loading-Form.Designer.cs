@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
+            this.myProgress = new CircularProgressBar.CircularProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -79,36 +82,41 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Wei, Sean, Malek";
             // 
-            // circularProgressBar1
+            // myProgress
             // 
-            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar1.AnimationSpeed = 500;
-            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
-            this.circularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.circularProgressBar1.InnerColor = System.Drawing.Color.Empty;
-            this.circularProgressBar1.InnerMargin = 2;
-            this.circularProgressBar1.InnerWidth = -1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(246, 127);
-            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar1.Name = "circularProgressBar1";
-            this.circularProgressBar1.OuterColor = System.Drawing.Color.White;
-            this.circularProgressBar1.OuterMargin = -25;
-            this.circularProgressBar1.OuterWidth = 26;
-            this.circularProgressBar1.ProgressColor = System.Drawing.Color.Empty;
-            this.circularProgressBar1.ProgressWidth = 25;
-            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.circularProgressBar1.Size = new System.Drawing.Size(228, 227);
-            this.circularProgressBar1.StartAngle = 270;
-            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.circularProgressBar1.SubscriptText = ".23";
-            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.circularProgressBar1.SuperscriptText = "°C";
-            this.circularProgressBar1.TabIndex = 1;
-            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.circularProgressBar1.Value = 68;
+            this.myProgress.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.myProgress.AnimationSpeed = 600;
+            this.myProgress.BackColor = System.Drawing.Color.Transparent;
+            this.myProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
+            this.myProgress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.myProgress.InnerColor = System.Drawing.Color.Empty;
+            this.myProgress.InnerMargin = 2;
+            this.myProgress.InnerWidth = -1;
+            this.myProgress.Location = new System.Drawing.Point(246, 127);
+            this.myProgress.MarqueeAnimationSpeed = 2000;
+            this.myProgress.Name = "myProgress";
+            this.myProgress.OuterColor = System.Drawing.Color.White;
+            this.myProgress.OuterMargin = -25;
+            this.myProgress.OuterWidth = 26;
+            this.myProgress.ProgressColor = System.Drawing.SystemColors.HotTrack;
+            this.myProgress.ProgressWidth = 25;
+            this.myProgress.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.myProgress.Size = new System.Drawing.Size(228, 227);
+            this.myProgress.StartAngle = 270;
+            this.myProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.myProgress.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.myProgress.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.myProgress.SubscriptText = ".23";
+            this.myProgress.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.myProgress.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.myProgress.SuperscriptText = "°C";
+            this.myProgress.TabIndex = 1;
+            this.myProgress.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.myProgress.Value = 25;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Loading_Form
             // 
@@ -116,14 +124,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(733, 464);
-            this.Controls.Add(this.circularProgressBar1);
+            this.Controls.Add(this.myProgress);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Loading_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loading_Form";
+            this.Load += new System.EventHandler(this.Loading_Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,6 +145,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private CircularProgressBar.CircularProgressBar circularProgressBar1;
+        private CircularProgressBar.CircularProgressBar myProgress;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
