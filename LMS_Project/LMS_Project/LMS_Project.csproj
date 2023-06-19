@@ -52,8 +52,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Book.cs" />
     <Compile Include="Classes\Person.cs" />
+    <Compile Include="Classes\Staff.cs" />
+    <Compile Include="Classes\Supplier.cs" />
     <Compile Include="Classes\test.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="Forms\Dashboard-Staff.cs">
       <SubType>Form</SubType>
     </Compile>
