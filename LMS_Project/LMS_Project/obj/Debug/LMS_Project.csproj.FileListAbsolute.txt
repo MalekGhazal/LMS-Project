@@ -30,3 +30,4 @@ C:\Users\Seanzilla\Desktop\App Development\FinalProject\LMS-Project\LMS_Project\
 C:\Users\Seanzilla\Desktop\App Development\FinalProject\LMS-Project\LMS_Project\LMS_Project\obj\Debug\LMS_Project.csproj.CopyComplete
 C:\Users\Seanzilla\Desktop\App Development\FinalProject\LMS-Project\LMS_Project\LMS_Project\obj\Debug\LMS_Project.exe
 C:\Users\Seanzilla\Desktop\App Development\FinalProject\LMS-Project\LMS_Project\LMS_Project\obj\Debug\LMS_Project.pdb
+C:\Users\Ghazal\Desktop\Vanier\App Dev\LMS-Project\LMS_Project\LMS_Project\obj\Debug\LMS_Project.Forms.Dashboard_Form.resources

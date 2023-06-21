@@ -56,7 +56,9 @@
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\Staff.cs" />
     <Compile Include="Classes\Supplier.cs" />
-    <Compile Include="Classes\test.cs" />
+    <Compile Include="Classes\RoundPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\User.cs" />
     <Compile Include="Forms\Dashboard-Staff.cs">
       <SubType>Form</SubType>
@@ -114,6 +116,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Dashboard-Staff.resx">
+      <DependentUpon>Dashboard-Staff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Loading-Form.resx">
       <DependentUpon>Loading-Form.cs</DependentUpon>
     </EmbeddedResource>

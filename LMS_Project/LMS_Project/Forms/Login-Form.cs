@@ -7,19 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace LMS_Project.Forms
 {
     public partial class Login_Form : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeft,     // x-coordinate of upper-left corner
+            int nTop,      // y-coordinate of upper-left corner
+            int nRight,    // x-coordinate of lower-right corner
+            int nBottom,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
+
         public Login_Form()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = System.Drawing.Region
+                .FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void Login_Form_Load(object sender, EventArgs e)
         {
-
+            // Rounded Login button
+            loginBtn.Region = Region.FromHrgn
+                (CreateRoundRectRgn(0, 0, loginBtn.Width, loginBtn.Height, 15, 15));
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -34,7 +51,11 @@ namespace LMS_Project.Forms
         {
 
         }
+        // ****************************************************************
 
+        // Enters & Leavers for the TextBoxes (username, password)
+        // these methods acts like placeholders in the textboxes
+        // so it would be easier for the user to type in his data.
         private void usernameTxtBox_Enter(object sender, EventArgs e)
         {
             if (usernameTxtBox.Text == "Your Username")
@@ -70,5 +91,18 @@ namespace LMS_Project.Forms
                 passwordTxtBox.ForeColor= Color.LightGray;
             }
         }
+
+        private void loginBtn_Click(object sender, EventArgs e)
+        {
+            Dashboard_Form staffForm = new Dashboard_Form();
+            this.Hide();
+            staffForm.Show();
+        }
+
+        private void loginCloseBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        // ****************************************************************
     }
 }

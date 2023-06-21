@@ -36,6 +36,7 @@
             this.clearBtn = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.loginCloseBtn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -43,6 +44,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.loginCloseBtn);
             this.panel1.Controls.Add(this.loginBtn);
             this.panel1.Controls.Add(this.passwordTxtBox);
             this.panel1.Controls.Add(this.usernameTxtBox);
@@ -68,6 +70,7 @@
             this.loginBtn.TabIndex = 2;
             this.loginBtn.Text = "LOGIN";
             this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // passwordTxtBox
             // 
@@ -130,6 +133,19 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // loginCloseBtn
+            // 
+            this.loginCloseBtn.AutoSize = true;
+            this.loginCloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginCloseBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginCloseBtn.ForeColor = System.Drawing.Color.White;
+            this.loginCloseBtn.Location = new System.Drawing.Point(5, 5);
+            this.loginCloseBtn.Name = "loginCloseBtn";
+            this.loginCloseBtn.Size = new System.Drawing.Size(29, 17);
+            this.loginCloseBtn.TabIndex = 3;
+            this.loginCloseBtn.Text = "Exit";
+            this.loginCloseBtn.Click += new System.EventHandler(this.loginCloseBtn_Click);
+            // 
             // Login_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,5 +175,6 @@
         private System.Windows.Forms.Button loginBtn;
         private System.Windows.Forms.Label clearBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label loginCloseBtn;
     }
 }
