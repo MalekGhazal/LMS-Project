@@ -38,8 +38,9 @@
             this.staffMembersBtn = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.roundPictureBox1 = new LMS_Project.Classes.RoundPictureBox();
             this.draggingBar = new System.Windows.Forms.Panel();
+            this.roundPictureBox1 = new LMS_Project.Classes.RoundPictureBox();
+            this.logoutBtn = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -117,6 +118,7 @@
             this.staffBooksBtn.TabIndex = 5;
             this.staffBooksBtn.Text = "Manage Books";
             this.staffBooksBtn.UseVisualStyleBackColor = false;
+            this.staffBooksBtn.Click += new System.EventHandler(this.staffBooksBtn_Click);
             // 
             // staffMembersBtn
             // 
@@ -133,6 +135,7 @@
             this.staffMembersBtn.TabIndex = 5;
             this.staffMembersBtn.Text = "Manage Members";
             this.staffMembersBtn.UseVisualStyleBackColor = false;
+            this.staffMembersBtn.Click += new System.EventHandler(this.staffMembersBtn_Click);
             // 
             // pictureBox2
             // 
@@ -158,6 +161,15 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
+            // draggingBar
+            // 
+            this.draggingBar.Location = new System.Drawing.Point(0, 1);
+            this.draggingBar.Name = "draggingBar";
+            this.draggingBar.Size = new System.Drawing.Size(1130, 16);
+            this.draggingBar.TabIndex = 7;
+            this.draggingBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouse_down);
+            this.draggingBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouse_move);
+            // 
             // roundPictureBox1
             // 
             this.roundPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundPictureBox1.Image")));
@@ -168,14 +180,18 @@
             this.roundPictureBox1.TabIndex = 2;
             this.roundPictureBox1.TabStop = false;
             // 
-            // draggingBar
+            // logoutBtn
             // 
-            this.draggingBar.Location = new System.Drawing.Point(0, 1);
-            this.draggingBar.Name = "draggingBar";
-            this.draggingBar.Size = new System.Drawing.Size(1130, 16);
-            this.draggingBar.TabIndex = 7;
-            this.draggingBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouse_down);
-            this.draggingBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouse_move);
+            this.logoutBtn.AutoSize = true;
+            this.logoutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoutBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.ForeColor = System.Drawing.Color.White;
+            this.logoutBtn.Location = new System.Drawing.Point(1064, 78);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(58, 17);
+            this.logoutBtn.TabIndex = 8;
+            this.logoutBtn.Text = "Log out";
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // Dashboard_Form
             // 
@@ -183,6 +199,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1193, 617);
+            this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.draggingBar);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -221,5 +238,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel draggingBar;
+        private System.Windows.Forms.Label logoutBtn;
     }
 }

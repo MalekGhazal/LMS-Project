@@ -76,6 +76,27 @@ namespace LMS_Project.Forms
                 Location = mousePose;
             }
         }
+
+        private void staffBooksBtn_Click(object sender, EventArgs e)
+        {
+            StaffBooksForm sbf = new StaffBooksForm();
+            this.Close();
+            sbf.Show();
+        }
+
+        private void staffMembersBtn_Click(object sender, EventArgs e)
+        {
+            StaffMembersForm smf = new StaffMembersForm();
+            this.Close();
+            smf.Show();
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            Login_Form login = new Login_Form();
+            this.Close();
+            login.Show();
+        }
         //
     }
 }
