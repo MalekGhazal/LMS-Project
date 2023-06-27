@@ -33,18 +33,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.staffBooksBtn = new System.Windows.Forms.Button();
-            this.staffMembersBtn = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.draggingBar = new System.Windows.Forms.Panel();
             this.logoutBtn = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.roundPictureBox1 = new LMS_Project.Classes.RoundPictureBox();
+            this.suppSellBtn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -92,38 +98,6 @@
             this.label4.Size = new System.Drawing.Size(120, 39);
             this.label4.TabIndex = 3;
             this.label4.Text = "Library";
-            // 
-            // staffBooksBtn
-            // 
-            this.staffBooksBtn.BackColor = System.Drawing.Color.White;
-            this.staffBooksBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.staffBooksBtn.FlatAppearance.BorderSize = 0;
-            this.staffBooksBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.staffBooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.staffBooksBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.staffBooksBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
-            this.staffBooksBtn.Location = new System.Drawing.Point(317, 32);
-            this.staffBooksBtn.Name = "staffBooksBtn";
-            this.staffBooksBtn.Size = new System.Drawing.Size(260, 41);
-            this.staffBooksBtn.TabIndex = 5;
-            this.staffBooksBtn.Text = "Sell a Book";
-            this.staffBooksBtn.UseVisualStyleBackColor = false;
-            // 
-            // staffMembersBtn
-            // 
-            this.staffMembersBtn.BackColor = System.Drawing.Color.White;
-            this.staffMembersBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.staffMembersBtn.FlatAppearance.BorderSize = 0;
-            this.staffMembersBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.staffMembersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.staffMembersBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.staffMembersBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
-            this.staffMembersBtn.Location = new System.Drawing.Point(659, 32);
-            this.staffMembersBtn.Name = "staffMembersBtn";
-            this.staffMembersBtn.Size = new System.Drawing.Size(260, 41);
-            this.staffMembersBtn.TabIndex = 5;
-            this.staffMembersBtn.Text = "Seach a Book";
-            this.staffMembersBtn.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
             // 
@@ -174,10 +148,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-72, 391);
+            this.pictureBox1.Location = new System.Drawing.Point(-55, 429);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(502, 287);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(396, 246);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -191,19 +165,99 @@
             this.roundPictureBox1.TabIndex = 2;
             this.roundPictureBox1.TabStop = false;
             // 
+            // suppSellBtn
+            // 
+            this.suppSellBtn.BackColor = System.Drawing.Color.White;
+            this.suppSellBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.suppSellBtn.FlatAppearance.BorderSize = 0;
+            this.suppSellBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.suppSellBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.suppSellBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suppSellBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
+            this.suppSellBtn.Location = new System.Drawing.Point(-12, 344);
+            this.suppSellBtn.Name = "suppSellBtn";
+            this.suppSellBtn.Size = new System.Drawing.Size(260, 41);
+            this.suppSellBtn.TabIndex = 5;
+            this.suppSellBtn.Text = "Sell a Book";
+            this.suppSellBtn.UseVisualStyleBackColor = false;
+            this.suppSellBtn.Click += new System.EventHandler(this.suppSellBtn_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(459, 37);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(324, 39);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Supplier Dashboard";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(466, 166);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(715, 439);
+            this.dataGridView1.TabIndex = 12;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(0, 202);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(248, 21);
+            this.comboBox1.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(15, 166);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 21);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Search By:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(0, 274);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(248, 20);
+            this.textBox1.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(15, 238);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 21);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Search:";
+            // 
             // DashboardSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1193, 617);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.draggingBar);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.staffMembersBtn);
-            this.Controls.Add(this.staffBooksBtn);
+            this.Controls.Add(this.suppSellBtn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.roundPictureBox1);
@@ -218,6 +272,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,12 +285,17 @@
         private Classes.RoundPictureBox roundPictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button staffBooksBtn;
-        private System.Windows.Forms.Button staffMembersBtn;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel draggingBar;
         private System.Windows.Forms.Label logoutBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button suppSellBtn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label7;
     }
 }

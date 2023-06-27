@@ -42,11 +42,9 @@ namespace LMS_Project.Forms
 
         private void Dashboard_Form_Load(object sender, EventArgs e)
         {
-            // Adimn dashboard buttons (rounded)
-            staffBooksBtn.Region = Region.FromHrgn
-                (CreateRoundRectRgn(0, 0, staffBooksBtn.Width, staffBooksBtn.Height, 15, 15));
-            staffMembersBtn.Region = Region.FromHrgn
-                (CreateRoundRectRgn(0, 0, staffMembersBtn.Width, staffMembersBtn.Height, 15, 15));
+            // dashboard buttons (rounded)
+            suppSellBtn.Region = Region.FromHrgn
+                (CreateRoundRectRgn(0, 0, suppSellBtn.Width, suppSellBtn.Height, 15, 15));
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -83,6 +81,13 @@ namespace LMS_Project.Forms
             this.Close();
             login.Show();
         }
+
+        private void suppSellBtn_Click(object sender, EventArgs e)
+        {
+            SuppSellBook ssb = new SuppSellBook();
+            ssb.Show();
+        }
+
         //
     }
 }

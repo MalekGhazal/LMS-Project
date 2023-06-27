@@ -37,3 +37,4 @@ C:\Users\Ghazal\Desktop\Vanier\App Dev\LMS-Project\LMS_Project\LMS_Project\obj\D
 C:\Users\Ghazal\Desktop\Vanier\App Dev\LMS-Project\LMS_Project\LMS_Project\obj\Debug\LMS_Project.Forms.StaffBooksForm.resources
 C:\Users\Ghazal\Desktop\Vanier\App Dev\LMS-Project\LMS_Project\LMS_Project\obj\Debug\LMS_Project.Forms.UserBooks.resources
 C:\Users\Ghazal\Desktop\Vanier\App Dev\LMS-Project\LMS_Project\LMS_Project\obj\Debug\LMS_Project.Forms.UserMembership.resources
+C:\Users\Ghazal\Desktop\Vanier\App Dev\LMS-Project\LMS_Project\LMS_Project\obj\Debug\LMS_Project.Forms.SuppSellBook.resources
