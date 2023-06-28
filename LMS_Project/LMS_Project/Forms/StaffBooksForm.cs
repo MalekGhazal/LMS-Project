@@ -47,6 +47,14 @@ namespace LMS_Project.Forms
                 (CreateRoundRectRgn(0, 0, staffBooksBtn.Width, staffBooksBtn.Height, 15, 15));
             staffMembersBtn.Region = Region.FromHrgn
                 (CreateRoundRectRgn(0, 0, staffMembersBtn.Width, staffMembersBtn.Height, 15, 15));
+            addBookBtn.Region = Region.FromHrgn
+                (CreateRoundRectRgn(0, 0, addBookBtn.Width, addBookBtn.Height, 15, 15));
+            searchBookBtn.Region = Region.FromHrgn
+                (CreateRoundRectRgn(0, 0, searchBookBtn.Width, searchBookBtn.Height, 15, 15));
+            editBookBtn.Region = Region.FromHrgn
+                (CreateRoundRectRgn(0, 0, editBookBtn.Width, editBookBtn.Height, 15, 15));
+            markBookBtn.Region = Region.FromHrgn
+                (CreateRoundRectRgn(0, 0, markBookBtn.Width, markBookBtn.Height, 15, 15));
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

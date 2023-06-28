@@ -41,10 +41,14 @@
             this.roundPictureBox1 = new LMS_Project.Classes.RoundPictureBox();
             this.logoutBtn = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.staffUsersList = new System.Windows.Forms.DataGridView();
+            this.lendUserBtn = new System.Windows.Forms.Button();
+            this.addMemberBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffUsersList)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -194,17 +198,63 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // staffUsersList
+            // 
+            this.staffUsersList.BackgroundColor = System.Drawing.Color.White;
+            this.staffUsersList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.staffUsersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.staffUsersList.Location = new System.Drawing.Point(19, 127);
+            this.staffUsersList.Name = "staffUsersList";
+            this.staffUsersList.Size = new System.Drawing.Size(1162, 369);
+            this.staffUsersList.TabIndex = 12;
+            // 
+            // lendUserBtn
+            // 
+            this.lendUserBtn.BackColor = System.Drawing.Color.White;
+            this.lendUserBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lendUserBtn.FlatAppearance.BorderSize = 0;
+            this.lendUserBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.lendUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lendUserBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lendUserBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
+            this.lendUserBtn.Location = new System.Drawing.Point(317, 540);
+            this.lendUserBtn.Name = "lendUserBtn";
+            this.lendUserBtn.Size = new System.Drawing.Size(260, 41);
+            this.lendUserBtn.TabIndex = 5;
+            this.lendUserBtn.Text = "Lend a User";
+            this.lendUserBtn.UseVisualStyleBackColor = false;
+            this.lendUserBtn.Click += new System.EventHandler(this.staffBooksBtn_Click);
+            // 
+            // addMemberBtn
+            // 
+            this.addMemberBtn.BackColor = System.Drawing.Color.White;
+            this.addMemberBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addMemberBtn.FlatAppearance.BorderSize = 0;
+            this.addMemberBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.addMemberBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addMemberBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addMemberBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
+            this.addMemberBtn.Location = new System.Drawing.Point(659, 540);
+            this.addMemberBtn.Name = "addMemberBtn";
+            this.addMemberBtn.Size = new System.Drawing.Size(260, 41);
+            this.addMemberBtn.TabIndex = 5;
+            this.addMemberBtn.Text = "Add as Member";
+            this.addMemberBtn.UseVisualStyleBackColor = false;
+            // 
             // StaffMembersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1193, 617);
+            this.Controls.Add(this.staffUsersList);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.draggingBar);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.addMemberBtn);
+            this.Controls.Add(this.lendUserBtn);
             this.Controls.Add(this.staffMembersBtn);
             this.Controls.Add(this.staffBooksBtn);
             this.Controls.Add(this.label4);
@@ -221,6 +271,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffUsersList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +291,8 @@
         private System.Windows.Forms.Panel draggingBar;
         private System.Windows.Forms.Label logoutBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView staffUsersList;
+        private System.Windows.Forms.Button lendUserBtn;
+        private System.Windows.Forms.Button addMemberBtn;
     }
 }

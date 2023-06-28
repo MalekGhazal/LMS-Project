@@ -41,10 +41,22 @@
             this.roundPictureBox1 = new LMS_Project.Classes.RoundPictureBox();
             this.logoutBtn = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.staffBooksList = new System.Windows.Forms.DataGridView();
+            this.addBookBtn = new System.Windows.Forms.Button();
+            this.searchBookBtn = new System.Windows.Forms.Button();
+            this.editBookBtn = new System.Windows.Forms.Button();
+            this.markBookBtn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.titleTxtBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.authorTxtBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.categoryComBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBooksList)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -194,12 +206,145 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // staffBooksList
+            // 
+            this.staffBooksList.BackgroundColor = System.Drawing.Color.White;
+            this.staffBooksList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.staffBooksList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.staffBooksList.Location = new System.Drawing.Point(354, 153);
+            this.staffBooksList.Name = "staffBooksList";
+            this.staffBooksList.Size = new System.Drawing.Size(827, 452);
+            this.staffBooksList.TabIndex = 11;
+            // 
+            // addBookBtn
+            // 
+            this.addBookBtn.BackColor = System.Drawing.Color.White;
+            this.addBookBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addBookBtn.FlatAppearance.BorderSize = 0;
+            this.addBookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addBookBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBookBtn.Location = new System.Drawing.Point(19, 479);
+            this.addBookBtn.Name = "addBookBtn";
+            this.addBookBtn.Size = new System.Drawing.Size(110, 47);
+            this.addBookBtn.TabIndex = 12;
+            this.addBookBtn.Text = "Add";
+            this.addBookBtn.UseVisualStyleBackColor = false;
+            // 
+            // searchBookBtn
+            // 
+            this.searchBookBtn.BackColor = System.Drawing.Color.White;
+            this.searchBookBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchBookBtn.FlatAppearance.BorderSize = 0;
+            this.searchBookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBookBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBookBtn.Location = new System.Drawing.Point(209, 479);
+            this.searchBookBtn.Name = "searchBookBtn";
+            this.searchBookBtn.Size = new System.Drawing.Size(110, 47);
+            this.searchBookBtn.TabIndex = 12;
+            this.searchBookBtn.Text = "Search";
+            this.searchBookBtn.UseVisualStyleBackColor = false;
+            // 
+            // editBookBtn
+            // 
+            this.editBookBtn.BackColor = System.Drawing.Color.White;
+            this.editBookBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editBookBtn.FlatAppearance.BorderSize = 0;
+            this.editBookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editBookBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBookBtn.Location = new System.Drawing.Point(19, 558);
+            this.editBookBtn.Name = "editBookBtn";
+            this.editBookBtn.Size = new System.Drawing.Size(110, 47);
+            this.editBookBtn.TabIndex = 12;
+            this.editBookBtn.Text = "Edit";
+            this.editBookBtn.UseVisualStyleBackColor = false;
+            // 
+            // markBookBtn
+            // 
+            this.markBookBtn.BackColor = System.Drawing.Color.White;
+            this.markBookBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.markBookBtn.FlatAppearance.BorderSize = 0;
+            this.markBookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.markBookBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.markBookBtn.Location = new System.Drawing.Point(209, 558);
+            this.markBookBtn.Name = "markBookBtn";
+            this.markBookBtn.Size = new System.Drawing.Size(110, 47);
+            this.markBookBtn.TabIndex = 12;
+            this.markBookBtn.Text = "Mark";
+            this.markBookBtn.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(15, 144);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 22);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Title";
+            // 
+            // titleTxtBox
+            // 
+            this.titleTxtBox.Location = new System.Drawing.Point(29, 185);
+            this.titleTxtBox.Multiline = true;
+            this.titleTxtBox.Name = "titleTxtBox";
+            this.titleTxtBox.Size = new System.Drawing.Size(219, 49);
+            this.titleTxtBox.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(15, 253);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 22);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Author";
+            // 
+            // authorTxtBox
+            // 
+            this.authorTxtBox.Location = new System.Drawing.Point(29, 294);
+            this.authorTxtBox.Name = "authorTxtBox";
+            this.authorTxtBox.Size = new System.Drawing.Size(219, 20);
+            this.authorTxtBox.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(15, 333);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 22);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Category";
+            // 
+            // categoryComBox
+            // 
+            this.categoryComBox.FormattingEnabled = true;
+            this.categoryComBox.Location = new System.Drawing.Point(29, 374);
+            this.categoryComBox.Name = "categoryComBox";
+            this.categoryComBox.Size = new System.Drawing.Size(219, 21);
+            this.categoryComBox.TabIndex = 15;
+            // 
             // StaffBooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1193, 617);
+            this.Controls.Add(this.categoryComBox);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.authorTxtBox);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.titleTxtBox);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.markBookBtn);
+            this.Controls.Add(this.editBookBtn);
+            this.Controls.Add(this.searchBookBtn);
+            this.Controls.Add(this.addBookBtn);
+            this.Controls.Add(this.staffBooksList);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.draggingBar);
@@ -221,6 +366,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBooksList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +386,16 @@
         private System.Windows.Forms.Panel draggingBar;
         private System.Windows.Forms.Label logoutBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView staffBooksList;
+        private System.Windows.Forms.Button addBookBtn;
+        private System.Windows.Forms.Button searchBookBtn;
+        private System.Windows.Forms.Button editBookBtn;
+        private System.Windows.Forms.Button markBookBtn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox titleTxtBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox authorTxtBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox categoryComBox;
     }
 }

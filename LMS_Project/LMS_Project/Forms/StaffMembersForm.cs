@@ -47,6 +47,10 @@ namespace LMS_Project.Forms
                 (CreateRoundRectRgn(0, 0, staffBooksBtn.Width, staffBooksBtn.Height, 15, 15));
             staffMembersBtn.Region = Region.FromHrgn
                 (CreateRoundRectRgn(0, 0, staffMembersBtn.Width, staffMembersBtn.Height, 15, 15));
+            lendUserBtn.Region = Region.FromHrgn
+                (CreateRoundRectRgn(0, 0, lendUserBtn.Width, lendUserBtn.Height, 15, 15));
+            addMemberBtn.Region = Region.FromHrgn
+                (CreateRoundRectRgn(0, 0, addMemberBtn.Width, addMemberBtn.Height, 15, 15));
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -79,7 +83,9 @@ namespace LMS_Project.Forms
 
         private void staffBooksBtn_Click(object sender, EventArgs e)
         {
-            
+            StaffBooksForm staffBooksForm = new StaffBooksForm();
+            this.Hide();
+            staffBooksForm.Show();
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
