@@ -16,7 +16,7 @@ namespace LMS_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.StaffBooksForm());
+            Application.Run(new Forms.DashboardSupplier());
         }
     }
 }

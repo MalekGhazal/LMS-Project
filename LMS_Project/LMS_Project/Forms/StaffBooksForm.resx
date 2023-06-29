@@ -330,7 +330,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
-        sQAAF7EBfT1eOAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACMHSURBVHhe7d0J
+        sAAAF7ABr3q83AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACMHSURBVHhe7d0J
         3Hb5XD/wZ5ndbJbskWXEMLZoEonSpj9KUjFJWRJGkiUSFfGnlCxFKUsIIesfUdkrBiFjDyN7g8EsZvP/
         nGfOzJzner7P89zXfV/LuX7X+/N6vXvN/Xnlvu/rnN85v99z3ec6Z9t3vvMdAGDNlCUA0LayBADaVpYA
         QNvKEgBoW1kCAG0rSwCgbWUJALStLAGAtpUlANC2sgQA2laWAEDbyhIAaFtZAgBtK0sAoG1lCQC0rSwB
@@ -483,4 +483,13 @@
         SwCgbWUJALStLAGAln1n2/8HQ7HOIor0rlQAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="bookBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
+  <metadata name="lMSDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="bookTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>290, 17</value>
+  </metadata>
 </root>

@@ -42,6 +42,8 @@ namespace LMS_Project.Forms
 
         private void Dashboard_Form_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'lMSDataSet.Book' table. You can move, or remove it, as needed.
+            this.bookTableAdapter.Fill(this.lMSDataSet.Book);
             // Adimn dashboard buttons (rounded)
             staffBooksBtn.Region = Region.FromHrgn
                 (CreateRoundRectRgn(0, 0, staffBooksBtn.Width, staffBooksBtn.Height, 15, 15));
