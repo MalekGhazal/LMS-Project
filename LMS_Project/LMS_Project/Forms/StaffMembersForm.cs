@@ -8,11 +8,15 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using LMS_Project.Classes;
 
 namespace LMS_Project.Forms
 {
     public partial class StaffMembersForm : Form
     {
+        public string UserFirstName { get; set; }
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -42,6 +46,8 @@ namespace LMS_Project.Forms
 
         private void Dashboard_Form_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'lMSDataSet.User' table. You can move, or remove it, as needed.
+            this.userTableAdapter.Fill(this.lMSDataSet.User);
             // Adimn dashboard buttons (rounded)
             staffBooksBtn.Region = Region.FromHrgn
                 (CreateRoundRectRgn(0, 0, staffBooksBtn.Width, staffBooksBtn.Height, 15, 15));
@@ -51,6 +57,7 @@ namespace LMS_Project.Forms
                 (CreateRoundRectRgn(0, 0, lendUserBtn.Width, lendUserBtn.Height, 15, 15));
             addMemberBtn.Region = Region.FromHrgn
                 (CreateRoundRectRgn(0, 0, addMemberBtn.Width, addMemberBtn.Height, 15, 15));
+            userFnameLabel.Text = UserFirstName;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -84,6 +91,7 @@ namespace LMS_Project.Forms
         private void staffBooksBtn_Click(object sender, EventArgs e)
         {
             StaffBooksForm staffBooksForm = new StaffBooksForm();
+            staffBooksForm.UserFirstName = UserFirstName;
             this.Hide();
             staffBooksForm.Show();
         }
@@ -100,6 +108,11 @@ namespace LMS_Project.Forms
             Dashboard_Form dashboard = new Dashboard_Form();
             this.Close();
             dashboard.Show();
+        }
+
+        private void addMemberBtn_Click(object sender, EventArgs e)
+        {
+            
         }
         //
     }

@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffBooksForm));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.userFnameLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.staffBooksBtn = new System.Windows.Forms.Button();
@@ -43,6 +43,15 @@
             this.logoutBtn = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.staffBooksList = new System.Windows.Forms.DataGridView();
+            this.bookIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isBorrowedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lMSDataSet = new LMS_Project.LMSDataSet();
             this.addBookBtn = new System.Windows.Forms.Button();
             this.searchBookBtn = new System.Windows.Forms.Button();
             this.editBookBtn = new System.Windows.Forms.Button();
@@ -53,23 +62,14 @@
             this.authorTxtBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.categoryComBox = new System.Windows.Forms.ComboBox();
-            this.lMSDataSet = new LMS_Project.LMSDataSet();
-            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookTableAdapter = new LMS_Project.LMSDataSetTableAdapters.BookTableAdapter();
-            this.bookIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isBorrowedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBooksList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lMSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lMSDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,16 +84,16 @@
             this.label1.Text = "Welcome";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // userFnameLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
-            this.label2.Location = new System.Drawing.Point(1019, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "User_Fname";
+            this.userFnameLabel.AutoSize = true;
+            this.userFnameLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userFnameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
+            this.userFnameLabel.Location = new System.Drawing.Point(1019, 54);
+            this.userFnameLabel.Name = "userFnameLabel";
+            this.userFnameLabel.Size = new System.Drawing.Size(103, 19);
+            this.userFnameLabel.TabIndex = 1;
+            this.userFnameLabel.Text = "User_Fname";
             // 
             // label3
             // 
@@ -150,6 +150,7 @@
             this.staffMembersBtn.TabIndex = 5;
             this.staffMembersBtn.Text = "Manage Members";
             this.staffMembersBtn.UseVisualStyleBackColor = false;
+            this.staffMembersBtn.Click += new System.EventHandler(this.staffMembersBtn_Click);
             // 
             // pictureBox2
             // 
@@ -221,7 +222,10 @@
             // 
             // staffBooksList
             // 
+            this.staffBooksList.AllowUserToAddRows = false;
+            this.staffBooksList.AllowUserToDeleteRows = false;
             this.staffBooksList.AutoGenerateColumns = false;
+            this.staffBooksList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.staffBooksList.BackgroundColor = System.Drawing.Color.White;
             this.staffBooksList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.staffBooksList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -236,8 +240,61 @@
             this.staffBooksList.DataSource = this.bookBindingSource;
             this.staffBooksList.Location = new System.Drawing.Point(354, 153);
             this.staffBooksList.Name = "staffBooksList";
+            this.staffBooksList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.staffBooksList.Size = new System.Drawing.Size(827, 452);
             this.staffBooksList.TabIndex = 11;
+            // 
+            // bookIDDataGridViewTextBoxColumn
+            // 
+            this.bookIDDataGridViewTextBoxColumn.DataPropertyName = "Book_ID";
+            this.bookIDDataGridViewTextBoxColumn.HeaderText = "Book ID";
+            this.bookIDDataGridViewTextBoxColumn.Name = "bookIDDataGridViewTextBoxColumn";
+            // 
+            // userIDDataGridViewTextBoxColumn
+            // 
+            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "User_ID";
+            this.userIDDataGridViewTextBoxColumn.HeaderText = "User ID";
+            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            // 
+            // authorDataGridViewTextBoxColumn
+            // 
+            this.authorDataGridViewTextBoxColumn.DataPropertyName = "Author";
+            this.authorDataGridViewTextBoxColumn.HeaderText = "Author";
+            this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
+            // 
+            // iSBNDataGridViewTextBoxColumn
+            // 
+            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            // 
+            // isBorrowedDataGridViewTextBoxColumn
+            // 
+            this.isBorrowedDataGridViewTextBoxColumn.DataPropertyName = "isBorrowed";
+            this.isBorrowedDataGridViewTextBoxColumn.HeaderText = "isBorrowed";
+            this.isBorrowedDataGridViewTextBoxColumn.Name = "isBorrowedDataGridViewTextBoxColumn";
+            // 
+            // bookBindingSource
+            // 
+            this.bookBindingSource.DataMember = "Book";
+            this.bookBindingSource.DataSource = this.lMSDataSet;
+            // 
+            // lMSDataSet
+            // 
+            this.lMSDataSet.DataSetName = "LMSDataSet";
+            this.lMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // addBookBtn
             // 
@@ -351,61 +408,9 @@
             this.categoryComBox.Size = new System.Drawing.Size(219, 21);
             this.categoryComBox.TabIndex = 15;
             // 
-            // lMSDataSet
-            // 
-            this.lMSDataSet.DataSetName = "LMSDataSet";
-            this.lMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bookBindingSource
-            // 
-            this.bookBindingSource.DataMember = "Book";
-            this.bookBindingSource.DataSource = this.lMSDataSet;
-            // 
             // bookTableAdapter
             // 
             this.bookTableAdapter.ClearBeforeFill = true;
-            // 
-            // bookIDDataGridViewTextBoxColumn
-            // 
-            this.bookIDDataGridViewTextBoxColumn.DataPropertyName = "Book_ID";
-            this.bookIDDataGridViewTextBoxColumn.HeaderText = "Book_ID";
-            this.bookIDDataGridViewTextBoxColumn.Name = "bookIDDataGridViewTextBoxColumn";
-            // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            // 
-            // authorDataGridViewTextBoxColumn
-            // 
-            this.authorDataGridViewTextBoxColumn.DataPropertyName = "Author";
-            this.authorDataGridViewTextBoxColumn.HeaderText = "Author";
-            this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
-            // 
-            // iSBNDataGridViewTextBoxColumn
-            // 
-            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
-            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            // 
-            // isBorrowedDataGridViewTextBoxColumn
-            // 
-            this.isBorrowedDataGridViewTextBoxColumn.DataPropertyName = "isBorrowed";
-            this.isBorrowedDataGridViewTextBoxColumn.HeaderText = "isBorrowed";
-            this.isBorrowedDataGridViewTextBoxColumn.Name = "isBorrowedDataGridViewTextBoxColumn";
             // 
             // StaffBooksForm
             // 
@@ -434,7 +439,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.roundPictureBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.userFnameLabel);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StaffBooksForm";
@@ -446,8 +451,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBooksList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lMSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lMSDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,7 +461,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label userFnameLabel;
         private Classes.RoundPictureBox roundPictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

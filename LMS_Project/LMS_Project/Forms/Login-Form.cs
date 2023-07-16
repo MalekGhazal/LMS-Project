@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
+using static LMS_Project.LMSDataSet;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using LMS_Project.Classes;
 
 namespace LMS_Project.Forms
 {
@@ -94,9 +98,63 @@ namespace LMS_Project.Forms
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            Dashboard_Form staffForm = new Dashboard_Form();
-            this.Hide();
-            staffForm.Show();
+            DataBase.MyDB db = new DataBase.MyDB();
+
+            string username = usernameTxtBox.Text;
+            string password = passwordTxtBox.Text;
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [User] WHERE Username = @usn AND Password = @pass", db.getConnection());
+
+            cmd.Parameters.Add("@usn", SqlDbType.VarChar).Value = username;
+            cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = password;
+
+            adapter.SelectCommand = cmd;
+            adapter.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                string userRole = dt.Rows[0]["User_Role"].ToString();
+                string userFirstName = dt.Rows[0]["User_Fname"].ToString();
+
+                switch (userRole)
+                {
+                    case "Staff":
+                        Dashboard_Form dba = new Dashboard_Form();
+                        dba.UserFirstName = userFirstName;
+                        dba.Show();
+                        break;
+                    case "Supplier":
+                        DashboardSupplier dbs = new DashboardSupplier();
+                        dbs.Show();
+                        break;
+                    case "User":
+                        DashboardUser dbu = new DashboardUser();
+                        dbu.Show();
+                        break;
+                    default:
+                        MessageBox.Show("Invalid user role", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                }
+
+                this.Close();
+            }
+            else
+            {
+                if (username.Trim().Equals(""))
+                {
+                    MessageBox.Show("Enter Your Username please", "Empty Username", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (password.Trim().Equals(""))
+                {
+                    MessageBox.Show("Enter Your Password please", "Empty Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Wrong Username or Password", "Wrong Data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void loginCloseBtn_Click(object sender, EventArgs e)

@@ -12,7 +12,7 @@ namespace LMS_Project.Classes
         {
         }
 
-        public Staff(int id, string lastName, string firstName, string phone, string email, string username, string password) : base(id, lastName, firstName, phone, email, username, password)
+        public Staff(int id, string lastName, string firstName, string phone, string email, string userRole, string username, string password) : base(id, lastName, firstName, phone, email, userRole, username, password)
         {
         }
 

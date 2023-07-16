@@ -18,7 +18,7 @@ namespace LMS_Project.Classes
         {
         }
 
-        public User(int id, string lastName, string firstName, string phone, string email, string username, string password) : base(id, lastName, firstName, phone, email, username, password)
+        public User(int id, string lastName, string firstName, string phone, string email, string userRole, string username, string password) : base(id, lastName, firstName, phone, email, userRole, username, password)
         {
         }
 

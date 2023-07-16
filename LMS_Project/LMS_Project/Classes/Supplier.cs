@@ -10,7 +10,7 @@ namespace LMS_Project.Classes
     {
         public Supplier() { }
 
-        public Supplier(int id, string lastName, string firstName, string phone, string email, string username, string password, string role) : base(id, lastName, firstName, phone, email, username, password)
+        public Supplier(int id, string lastName, string firstName, string phone, string email, string userRole, string username, string password, string role) : base(id, lastName, firstName, phone, email, userRole, username, password)
         {
         }
 

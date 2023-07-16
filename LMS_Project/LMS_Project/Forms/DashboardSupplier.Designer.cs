@@ -42,25 +42,25 @@
             this.suppSellBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.searchByCB = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.searchTxtBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lMSDataSet = new LMS_Project.LMSDataSet();
-            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bookTableAdapter = new LMS_Project.LMSDataSetTableAdapters.BookTableAdapter();
             this.Book_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lMSDataSet = new LMS_Project.LMSDataSet();
+            this.searchByCB = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.searchTxtBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.bookTableAdapter = new LMS_Project.LMSDataSetTableAdapters.BookTableAdapter();
             this.roundPictureBox1 = new LMS_Project.Classes.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lMSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lMSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,6 +217,51 @@
             this.dataGridView1.Size = new System.Drawing.Size(715, 439);
             this.dataGridView1.TabIndex = 12;
             // 
+            // Book_ID
+            // 
+            this.Book_ID.DataPropertyName = "Book_ID";
+            this.Book_ID.HeaderText = "Book ID";
+            this.Book_ID.Name = "Book_ID";
+            this.Book_ID.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // authorDataGridViewTextBoxColumn
+            // 
+            this.authorDataGridViewTextBoxColumn.DataPropertyName = "Author";
+            this.authorDataGridViewTextBoxColumn.HeaderText = "Author";
+            this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
+            this.authorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iSBNDataGridViewTextBoxColumn
+            // 
+            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
+            this.iSBNDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bookBindingSource
+            // 
+            this.bookBindingSource.DataMember = "Book";
+            this.bookBindingSource.DataSource = this.lMSDataSet;
+            // 
+            // lMSDataSet
+            // 
+            this.lMSDataSet.DataSetName = "LMSDataSet";
+            this.lMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // searchByCB
             // 
             this.searchByCB.FormattingEnabled = true;
@@ -261,54 +306,9 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Search:";
             // 
-            // lMSDataSet
-            // 
-            this.lMSDataSet.DataSetName = "LMSDataSet";
-            this.lMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bookBindingSource
-            // 
-            this.bookBindingSource.DataMember = "Book";
-            this.bookBindingSource.DataSource = this.lMSDataSet;
-            // 
             // bookTableAdapter
             // 
             this.bookTableAdapter.ClearBeforeFill = true;
-            // 
-            // Book_ID
-            // 
-            this.Book_ID.DataPropertyName = "Book_ID";
-            this.Book_ID.HeaderText = "Book ID";
-            this.Book_ID.Name = "Book_ID";
-            this.Book_ID.ReadOnly = true;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // authorDataGridViewTextBoxColumn
-            // 
-            this.authorDataGridViewTextBoxColumn.DataPropertyName = "Author";
-            this.authorDataGridViewTextBoxColumn.HeaderText = "Author";
-            this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
-            this.authorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iSBNDataGridViewTextBoxColumn
-            // 
-            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
-            this.iSBNDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
-            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // roundPictureBox1
             // 
@@ -352,8 +352,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lMSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lMSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

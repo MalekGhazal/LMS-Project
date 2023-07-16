@@ -42,11 +42,17 @@ namespace LMS_Project.Forms
 
         private void Dashboard_Form_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'lMSDataSet.Book' table. You can move, or remove it, as needed.
+            this.bookTableAdapter.Fill(this.lMSDataSet.Book);
             // Adimn dashboard buttons (rounded)
             staffBooksBtn.Region = Region.FromHrgn
                 (CreateRoundRectRgn(0, 0, staffBooksBtn.Width, staffBooksBtn.Height, 15, 15));
             staffMembersBtn.Region = Region.FromHrgn
                 (CreateRoundRectRgn(0, 0, staffMembersBtn.Width, staffMembersBtn.Height, 15, 15));
+            userBorrowBtn.Region = Region.FromHrgn
+                (CreateRoundRectRgn(0, 0, userBorrowBtn.Width, userBorrowBtn.Height, 15, 15));
+
+            userSearchByCB.SelectedIndex = 0;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -82,6 +88,39 @@ namespace LMS_Project.Forms
             Login_Form login = new Login_Form();
             this.Close();
             login.Show();
+        }
+
+        private void userSearchTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(userSearchTxtBox.Text))
+            {
+                bookBindingSource.Filter = string.Empty;
+            }
+            else
+            {
+                string columnName = userSearchByCB.Text;
+                string searchValue = userSearchTxtBox.Text;
+                string filterExpression = "";
+
+                if (columnName == "Book_ID")
+                {
+                    if (int.TryParse(searchValue, out int bookId))
+                    {
+                        filterExpression = string.Format("{0} = {1}", columnName, bookId);
+                    }
+                    else
+                    {
+                        // Book_ID input validation
+                        MessageBox.Show("Book ID must be a number");
+                    }
+                }
+                else
+                {
+                    filterExpression = string.Format("{0} LIKE '%{1}%'", columnName, searchValue);
+                }
+
+                bookBindingSource.Filter = filterExpression;
+            }
         }
         //
     }

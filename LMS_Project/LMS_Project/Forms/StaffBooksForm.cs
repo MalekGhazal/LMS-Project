@@ -13,6 +13,8 @@ namespace LMS_Project.Forms
 {
     public partial class StaffBooksForm : Form
     {
+        public string UserFirstName { get; set; }
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -57,6 +59,7 @@ namespace LMS_Project.Forms
                 (CreateRoundRectRgn(0, 0, editBookBtn.Width, editBookBtn.Height, 15, 15));
             markBookBtn.Region = Region.FromHrgn
                 (CreateRoundRectRgn(0, 0, markBookBtn.Width, markBookBtn.Height, 15, 15));
+            userFnameLabel.Text = UserFirstName;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -104,6 +107,14 @@ namespace LMS_Project.Forms
             Dashboard_Form dashboard = new Dashboard_Form();
             this.Close();
             dashboard.Show();
+        }
+
+        private void staffMembersBtn_Click(object sender, EventArgs e)
+        {
+            StaffMembersForm smf = new StaffMembersForm();
+            smf.UserFirstName = UserFirstName;
+            this.Close();
+            smf.Show();
         }
         //
     }
