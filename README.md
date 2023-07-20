@@ -16,7 +16,6 @@ The Library Management System is a desktop application developed as part of the 
 - Membership application process for users to become library members.
 - Staff members can review and accept/reject membership applications.
 - Books can be borrowed and returned by users with tracking of due dates.
-- The system provides real-time notifications for staff and users.
 
 ### Technologies Used
 - C# programming language
