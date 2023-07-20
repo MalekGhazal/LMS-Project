@@ -33,11 +33,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.suppTitleTxt = new System.Windows.Forms.TextBox();
+            this.suppAuthorTxt = new System.Windows.Forms.TextBox();
+            this.suppCategoryTxt = new System.Windows.Forms.ComboBox();
             this.sellBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.isbnSuppTxt = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -67,7 +69,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(222, 134);
+            this.label3.Location = new System.Drawing.Point(224, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 30);
             this.label3.TabIndex = 1;
@@ -78,7 +80,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(206, 233);
+            this.label4.Location = new System.Drawing.Point(208, 200);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 30);
             this.label4.TabIndex = 1;
@@ -89,34 +91,41 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(189, 321);
+            this.label5.Location = new System.Drawing.Point(191, 288);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(132, 30);
             this.label5.TabIndex = 1;
             this.label5.Text = "Category:";
             // 
-            // textBox1
+            // suppTitleTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 183);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(258, 31);
-            this.textBox1.TabIndex = 2;
+            this.suppTitleTxt.Location = new System.Drawing.Point(128, 150);
+            this.suppTitleTxt.Multiline = true;
+            this.suppTitleTxt.Name = "suppTitleTxt";
+            this.suppTitleTxt.Size = new System.Drawing.Size(258, 31);
+            this.suppTitleTxt.TabIndex = 2;
             // 
-            // textBox2
+            // suppAuthorTxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(126, 282);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(258, 20);
-            this.textBox2.TabIndex = 2;
+            this.suppAuthorTxt.Location = new System.Drawing.Point(128, 249);
+            this.suppAuthorTxt.Name = "suppAuthorTxt";
+            this.suppAuthorTxt.Size = new System.Drawing.Size(258, 20);
+            this.suppAuthorTxt.TabIndex = 2;
             // 
-            // comboBox1
+            // suppCategoryTxt
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(126, 370);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(258, 21);
-            this.comboBox1.TabIndex = 3;
+            this.suppCategoryTxt.FormattingEnabled = true;
+            this.suppCategoryTxt.Items.AddRange(new object[] {
+            "Fiction",
+            "Romance",
+            "Classic",
+            "History",
+            "Business",
+            "Fantasy"});
+            this.suppCategoryTxt.Location = new System.Drawing.Point(128, 337);
+            this.suppCategoryTxt.Name = "suppCategoryTxt";
+            this.suppCategoryTxt.Size = new System.Drawing.Size(258, 21);
+            this.suppCategoryTxt.TabIndex = 3;
             // 
             // sellBtn
             // 
@@ -126,12 +135,13 @@
             this.sellBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sellBtn.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sellBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
-            this.sellBtn.Location = new System.Drawing.Point(133, 458);
+            this.sellBtn.Location = new System.Drawing.Point(132, 462);
             this.sellBtn.Name = "sellBtn";
             this.sellBtn.Size = new System.Drawing.Size(251, 54);
             this.sellBtn.TabIndex = 4;
             this.sellBtn.Text = "Sell";
             this.sellBtn.UseVisualStyleBackColor = false;
+            this.sellBtn.Click += new System.EventHandler(this.sellBtn_Click);
             // 
             // cancelBtn
             // 
@@ -141,13 +151,31 @@
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
-            this.cancelBtn.Location = new System.Drawing.Point(133, 536);
+            this.cancelBtn.Location = new System.Drawing.Point(132, 540);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(251, 54);
             this.cancelBtn.TabIndex = 4;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(222, 371);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 30);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "ISBN:";
+            // 
+            // isbnSuppTxt
+            // 
+            this.isbnSuppTxt.Location = new System.Drawing.Point(128, 420);
+            this.isbnSuppTxt.Name = "isbnSuppTxt";
+            this.isbnSuppTxt.Size = new System.Drawing.Size(258, 20);
+            this.isbnSuppTxt.TabIndex = 2;
             // 
             // SuppSellBook
             // 
@@ -157,9 +185,11 @@
             this.ClientSize = new System.Drawing.Size(536, 617);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.sellBtn);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.suppCategoryTxt);
+            this.Controls.Add(this.isbnSuppTxt);
+            this.Controls.Add(this.suppAuthorTxt);
+            this.Controls.Add(this.suppTitleTxt);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -182,10 +212,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox suppTitleTxt;
+        private System.Windows.Forms.TextBox suppAuthorTxt;
+        private System.Windows.Forms.ComboBox suppCategoryTxt;
         private System.Windows.Forms.Button sellBtn;
         private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox isbnSuppTxt;
     }
 }

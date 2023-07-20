@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardSupplier));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.suppFirstName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -41,8 +41,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.suppSellBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Book_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.suppBookList = new System.Windows.Forms.DataGridView();
+            this.bookIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suppBookList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lMSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
@@ -74,18 +74,17 @@
             this.label1.Size = new System.Drawing.Size(83, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // suppFirstName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
-            this.label2.Location = new System.Drawing.Point(1019, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "User_Fname";
+            this.suppFirstName.AutoSize = true;
+            this.suppFirstName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suppFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
+            this.suppFirstName.Location = new System.Drawing.Point(1019, 54);
+            this.suppFirstName.Name = "suppFirstName";
+            this.suppFirstName.Size = new System.Drawing.Size(103, 19);
+            this.suppFirstName.TabIndex = 1;
+            this.suppFirstName.Text = "User_Fname";
             // 
             // label3
             // 
@@ -194,35 +193,35 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Supplier Dashboard";
             // 
-            // dataGridView1
+            // suppBookList
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Book_ID,
+            this.suppBookList.AllowUserToAddRows = false;
+            this.suppBookList.AllowUserToDeleteRows = false;
+            this.suppBookList.AutoGenerateColumns = false;
+            this.suppBookList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.suppBookList.BackgroundColor = System.Drawing.Color.White;
+            this.suppBookList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.suppBookList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.suppBookList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bookIDDataGridViewTextBoxColumn,
             this.titleDataGridViewTextBoxColumn,
             this.authorDataGridViewTextBoxColumn,
             this.iSBNDataGridViewTextBoxColumn,
             this.categoryDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.bookBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(466, 166);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(715, 439);
-            this.dataGridView1.TabIndex = 12;
+            this.suppBookList.DataSource = this.bookBindingSource;
+            this.suppBookList.Location = new System.Drawing.Point(466, 166);
+            this.suppBookList.Name = "suppBookList";
+            this.suppBookList.ReadOnly = true;
+            this.suppBookList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.suppBookList.Size = new System.Drawing.Size(715, 439);
+            this.suppBookList.TabIndex = 12;
             // 
-            // Book_ID
+            // bookIDDataGridViewTextBoxColumn
             // 
-            this.Book_ID.DataPropertyName = "Book_ID";
-            this.Book_ID.HeaderText = "Book ID";
-            this.Book_ID.Name = "Book_ID";
-            this.Book_ID.ReadOnly = true;
+            this.bookIDDataGridViewTextBoxColumn.DataPropertyName = "Book_ID";
+            this.bookIDDataGridViewTextBoxColumn.HeaderText = "Book ID";
+            this.bookIDDataGridViewTextBoxColumn.Name = "bookIDDataGridViewTextBoxColumn";
+            this.bookIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // titleDataGridViewTextBoxColumn
             // 
@@ -330,7 +329,7 @@
             this.Controls.Add(this.searchTxtBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.searchByCB);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.suppBookList);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.logoutBtn);
@@ -341,7 +340,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.roundPictureBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.suppFirstName);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DashboardSupplier";
@@ -351,7 +350,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suppBookList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lMSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
@@ -363,7 +362,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label suppFirstName;
         private Classes.RoundPictureBox roundPictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -374,7 +373,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button suppSellBtn;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView suppBookList;
         private System.Windows.Forms.ComboBox searchByCB;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox searchTxtBox;
@@ -382,7 +381,7 @@
         private LMSDataSet lMSDataSet;
         private System.Windows.Forms.BindingSource bookBindingSource;
         private LMSDataSetTableAdapters.BookTableAdapter bookTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Book_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn authorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;

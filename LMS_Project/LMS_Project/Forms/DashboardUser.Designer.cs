@@ -30,12 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardUser));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.userFirstName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.staffBooksBtn = new System.Windows.Forms.Button();
-            this.staffMembersBtn = new System.Windows.Forms.Button();
+            this.userMyBooksBtn = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.roundPictureBox1 = new LMS_Project.Classes.RoundPictureBox();
@@ -57,18 +56,17 @@
             this.label1.Size = new System.Drawing.Size(83, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // userFirstName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
-            this.label2.Location = new System.Drawing.Point(1019, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "User_Fname";
+            this.userFirstName.AutoSize = true;
+            this.userFirstName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
+            this.userFirstName.Location = new System.Drawing.Point(1019, 54);
+            this.userFirstName.Name = "userFirstName";
+            this.userFirstName.Size = new System.Drawing.Size(103, 19);
+            this.userFirstName.TabIndex = 1;
+            this.userFirstName.Text = "User_Fname";
             // 
             // label3
             // 
@@ -103,37 +101,22 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // staffBooksBtn
+            // userMyBooksBtn
             // 
-            this.staffBooksBtn.BackColor = System.Drawing.Color.White;
-            this.staffBooksBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.staffBooksBtn.FlatAppearance.BorderSize = 0;
-            this.staffBooksBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.staffBooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.staffBooksBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.staffBooksBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
-            this.staffBooksBtn.Location = new System.Drawing.Point(317, 32);
-            this.staffBooksBtn.Name = "staffBooksBtn";
-            this.staffBooksBtn.Size = new System.Drawing.Size(260, 41);
-            this.staffBooksBtn.TabIndex = 5;
-            this.staffBooksBtn.Text = "Membership";
-            this.staffBooksBtn.UseVisualStyleBackColor = false;
-            // 
-            // staffMembersBtn
-            // 
-            this.staffMembersBtn.BackColor = System.Drawing.Color.White;
-            this.staffMembersBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.staffMembersBtn.FlatAppearance.BorderSize = 0;
-            this.staffMembersBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.staffMembersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.staffMembersBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.staffMembersBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
-            this.staffMembersBtn.Location = new System.Drawing.Point(659, 32);
-            this.staffMembersBtn.Name = "staffMembersBtn";
-            this.staffMembersBtn.Size = new System.Drawing.Size(260, 41);
-            this.staffMembersBtn.TabIndex = 5;
-            this.staffMembersBtn.Text = "My Books";
-            this.staffMembersBtn.UseVisualStyleBackColor = false;
+            this.userMyBooksBtn.BackColor = System.Drawing.Color.White;
+            this.userMyBooksBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userMyBooksBtn.FlatAppearance.BorderSize = 0;
+            this.userMyBooksBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.userMyBooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userMyBooksBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userMyBooksBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
+            this.userMyBooksBtn.Location = new System.Drawing.Point(387, 32);
+            this.userMyBooksBtn.Name = "userMyBooksBtn";
+            this.userMyBooksBtn.Size = new System.Drawing.Size(458, 41);
+            this.userMyBooksBtn.TabIndex = 5;
+            this.userMyBooksBtn.Text = "Books";
+            this.userMyBooksBtn.UseVisualStyleBackColor = false;
+            this.userMyBooksBtn.Click += new System.EventHandler(this.userMyBooksBtn_Click);
             // 
             // pictureBox2
             // 
@@ -201,13 +184,12 @@
             this.Controls.Add(this.draggingBar);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.staffMembersBtn);
-            this.Controls.Add(this.staffBooksBtn);
+            this.Controls.Add(this.userMyBooksBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.roundPictureBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.userFirstName);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DashboardUser";
@@ -226,13 +208,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label userFirstName;
         private Classes.RoundPictureBox roundPictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button staffBooksBtn;
-        private System.Windows.Forms.Button staffMembersBtn;
+        private System.Windows.Forms.Button userMyBooksBtn;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel draggingBar;

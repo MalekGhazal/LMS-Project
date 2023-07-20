@@ -14,7 +14,9 @@ namespace LMS_Project.Forms
     public partial class Dashboard_Form : Form
     {
         public string UserFirstName { get; set; }
+        public int UserID { get; internal set; }
 
+        // Rounded corners
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -32,19 +34,15 @@ namespace LMS_Project.Forms
         public Dashboard_Form()
         {
             InitializeComponent();
+            // Rounded corners
             this.FormBorderStyle = FormBorderStyle.None;
             this.Region = System.Drawing.Region
                 .FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Dashboard_Form_Load(object sender, EventArgs e)
         {
-            // Adimn dashboard buttons (rounded)
+            // Rounded Buttons
             staffBooksBtn.Region = Region.FromHrgn
                 (CreateRoundRectRgn(0, 0, staffBooksBtn.Width, staffBooksBtn.Height, 15, 15));
             staffMembersBtn.Region = Region.FromHrgn

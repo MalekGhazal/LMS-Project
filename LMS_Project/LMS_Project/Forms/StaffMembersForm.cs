@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using LMS_Project.Classes;
+using LMS_Project.DAL;
 
 namespace LMS_Project.Forms
 {
@@ -17,6 +18,7 @@ namespace LMS_Project.Forms
     {
         public string UserFirstName { get; set; }
 
+        // Rounded Corners
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -34,21 +36,17 @@ namespace LMS_Project.Forms
         public StaffMembersForm()
         {
             InitializeComponent();
+            // Rounded Corners
             this.FormBorderStyle = FormBorderStyle.None;
             this.Region = System.Drawing.Region
                 .FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Dashboard_Form_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'lMSDataSet.User' table. You can move, or remove it, as needed.
-            this.userTableAdapter.Fill(this.lMSDataSet.User);
-            // Adimn dashboard buttons (rounded)
+            LoadUserData();
+
+            // Rounded Buttons
             staffBooksBtn.Region = Region.FromHrgn
                 (CreateRoundRectRgn(0, 0, staffBooksBtn.Width, staffBooksBtn.Height, 15, 15));
             staffMembersBtn.Region = Region.FromHrgn
@@ -57,7 +55,20 @@ namespace LMS_Project.Forms
                 (CreateRoundRectRgn(0, 0, lendUserBtn.Width, lendUserBtn.Height, 15, 15));
             addMemberBtn.Region = Region.FromHrgn
                 (CreateRoundRectRgn(0, 0, addMemberBtn.Width, addMemberBtn.Height, 15, 15));
+            applicationsBtn.Region = Region.FromHrgn
+                (CreateRoundRectRgn(0, 0, applicationsBtn.Width, applicationsBtn.Height, 15, 15));
+
             userFnameLabel.Text = UserFirstName;
+        }
+        /// <summary>
+        /// Loading all the User table records into the data grid
+        /// </summary>
+        private void LoadUserData()
+        {
+            UserRepository userRepository = new UserRepository();
+            List<User> users = userRepository.GetAllUsers();
+
+            staffUsersList.DataSource = users;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -90,10 +101,10 @@ namespace LMS_Project.Forms
 
         private void staffBooksBtn_Click(object sender, EventArgs e)
         {
-            StaffBooksForm staffBooksForm = new StaffBooksForm();
-            staffBooksForm.UserFirstName = UserFirstName;
-            this.Hide();
-            staffBooksForm.Show();
+           StaffBooksForm sbf = new StaffBooksForm();
+            sbf.UserFirstName = UserFirstName;
+            this.Close();
+            sbf.Show();
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
@@ -102,17 +113,63 @@ namespace LMS_Project.Forms
             this.Close();
             login.Show();
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Dashboard_Form dashboard = new Dashboard_Form();
-            this.Close();
-            dashboard.Show();
-        }
-
+        /// <summary>
+        /// Adding the selected user ( row ) from teh data grid as a Member
+        /// and inserting a new record into the Member table with the selected user's ID
+        /// using the ( AddMember ) method from the UserRepository
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addMemberBtn_Click(object sender, EventArgs e)
         {
-            
+            // Check if a user is selected
+            if (staffUsersList.SelectedRows.Count > 0)
+            {
+                // Get the selected User_ID
+                int userID = Convert.ToInt32(staffUsersList.SelectedRows[0].Cells["User_ID"].Value);
+
+                // Insert a new record into the Member table
+                UserRepository memberRepository = new UserRepository();
+                bool success = memberRepository.AddMember(userID);
+
+                if (success)
+                {
+                    MessageBox.Show("User is now a member!", "Add as Member", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add the user as a member.", "Add as Member", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a user.", "Select User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void lendUserBtn_Click(object sender, EventArgs e)
+        {
+            // Check if a user is selected
+            if (staffUsersList.SelectedRows.Count > 0)
+            {
+                // Get the selected user information
+                int userID = Convert.ToInt32(staffUsersList.SelectedRows[0].Cells["User_ID"].Value);
+                string userName = staffUsersList.SelectedRows[0].Cells["Username"].Value.ToString();
+
+                // Open the LendUserForm and pass the user information
+                LendUser lendUserForm = new LendUser(userID, userName);
+                lendUserForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a user first.", "Select User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void applicationsBtn_Click(object sender, EventArgs e)
+        {
+            Applications applications = new Applications();
+            applications.Show();
         }
         //
     }

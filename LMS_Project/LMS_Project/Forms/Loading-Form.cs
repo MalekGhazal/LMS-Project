@@ -14,6 +14,7 @@ namespace LMS_Project.Forms
 {
     public partial class Loading_Form : Form
     {
+        // Rounded corners
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -27,6 +28,7 @@ namespace LMS_Project.Forms
         public Loading_Form()
         {
             InitializeComponent();
+            // Rounded corners
             this.FormBorderStyle = FormBorderStyle.None;
             this.Region = System.Drawing.Region
                 .FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));

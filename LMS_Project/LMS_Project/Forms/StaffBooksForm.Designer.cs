@@ -39,23 +39,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.draggingBar = new System.Windows.Forms.Panel();
-            this.roundPictureBox1 = new LMS_Project.Classes.RoundPictureBox();
             this.logoutBtn = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.staffBooksList = new System.Windows.Forms.DataGridView();
-            this.bookIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isBorrowedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lMSDataSet = new LMS_Project.LMSDataSet();
             this.addBookBtn = new System.Windows.Forms.Button();
-            this.searchBookBtn = new System.Windows.Forms.Button();
-            this.editBookBtn = new System.Windows.Forms.Button();
-            this.markBookBtn = new System.Windows.Forms.Button();
+            this.updateBookBtn = new System.Windows.Forms.Button();
+            this.deleteBookBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.titleTxtBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,13 +53,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.categoryComBox = new System.Windows.Forms.ComboBox();
             this.bookTableAdapter = new LMS_Project.LMSDataSetTableAdapters.BookTableAdapter();
+            this.staffBookSearchTxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.isbnTxtBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.roundPictureBox1 = new LMS_Project.Classes.RoundPictureBox();
+            this.searchByCB = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBooksList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lMSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -82,7 +78,6 @@
             this.label1.Size = new System.Drawing.Size(83, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // userFnameLabel
             // 
@@ -133,7 +128,6 @@
             this.staffBooksBtn.TabIndex = 5;
             this.staffBooksBtn.Text = "Manage Books";
             this.staffBooksBtn.UseVisualStyleBackColor = false;
-            this.staffBooksBtn.Click += new System.EventHandler(this.staffBooksBtn_Click);
             // 
             // staffMembersBtn
             // 
@@ -185,16 +179,6 @@
             this.draggingBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouse_down);
             this.draggingBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouse_move);
             // 
-            // roundPictureBox1
-            // 
-            this.roundPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundPictureBox1.Image")));
-            this.roundPictureBox1.Location = new System.Drawing.Point(1131, 25);
-            this.roundPictureBox1.Name = "roundPictureBox1";
-            this.roundPictureBox1.Size = new System.Drawing.Size(53, 70);
-            this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.roundPictureBox1.TabIndex = 2;
-            this.roundPictureBox1.TabStop = false;
-            // 
             // logoutBtn
             // 
             this.logoutBtn.AutoSize = true;
@@ -208,83 +192,19 @@
             this.logoutBtn.Text = "Log out";
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(19, 59);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 27);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // staffBooksList
             // 
             this.staffBooksList.AllowUserToAddRows = false;
             this.staffBooksList.AllowUserToDeleteRows = false;
-            this.staffBooksList.AutoGenerateColumns = false;
             this.staffBooksList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.staffBooksList.BackgroundColor = System.Drawing.Color.White;
             this.staffBooksList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.staffBooksList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.staffBooksList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.bookIDDataGridViewTextBoxColumn,
-            this.userIDDataGridViewTextBoxColumn,
-            this.titleDataGridViewTextBoxColumn,
-            this.authorDataGridViewTextBoxColumn,
-            this.iSBNDataGridViewTextBoxColumn,
-            this.categoryDataGridViewTextBoxColumn,
-            this.isBorrowedDataGridViewTextBoxColumn});
-            this.staffBooksList.DataSource = this.bookBindingSource;
-            this.staffBooksList.Location = new System.Drawing.Point(354, 153);
+            this.staffBooksList.Location = new System.Drawing.Point(354, 185);
             this.staffBooksList.Name = "staffBooksList";
             this.staffBooksList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.staffBooksList.Size = new System.Drawing.Size(827, 452);
+            this.staffBooksList.Size = new System.Drawing.Size(827, 420);
             this.staffBooksList.TabIndex = 11;
-            // 
-            // bookIDDataGridViewTextBoxColumn
-            // 
-            this.bookIDDataGridViewTextBoxColumn.DataPropertyName = "Book_ID";
-            this.bookIDDataGridViewTextBoxColumn.HeaderText = "Book ID";
-            this.bookIDDataGridViewTextBoxColumn.Name = "bookIDDataGridViewTextBoxColumn";
-            // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "User ID";
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            // 
-            // authorDataGridViewTextBoxColumn
-            // 
-            this.authorDataGridViewTextBoxColumn.DataPropertyName = "Author";
-            this.authorDataGridViewTextBoxColumn.HeaderText = "Author";
-            this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
-            // 
-            // iSBNDataGridViewTextBoxColumn
-            // 
-            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
-            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            // 
-            // isBorrowedDataGridViewTextBoxColumn
-            // 
-            this.isBorrowedDataGridViewTextBoxColumn.DataPropertyName = "isBorrowed";
-            this.isBorrowedDataGridViewTextBoxColumn.HeaderText = "isBorrowed";
-            this.isBorrowedDataGridViewTextBoxColumn.Name = "isBorrowedDataGridViewTextBoxColumn";
             // 
             // bookBindingSource
             // 
@@ -303,54 +223,43 @@
             this.addBookBtn.FlatAppearance.BorderSize = 0;
             this.addBookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addBookBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBookBtn.Location = new System.Drawing.Point(19, 479);
+            this.addBookBtn.Location = new System.Drawing.Point(6, 558);
             this.addBookBtn.Name = "addBookBtn";
             this.addBookBtn.Size = new System.Drawing.Size(110, 47);
             this.addBookBtn.TabIndex = 12;
             this.addBookBtn.Text = "Add";
             this.addBookBtn.UseVisualStyleBackColor = false;
+            this.addBookBtn.Click += new System.EventHandler(this.addBookBtn_Click);
             // 
-            // searchBookBtn
+            // updateBookBtn
             // 
-            this.searchBookBtn.BackColor = System.Drawing.Color.White;
-            this.searchBookBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchBookBtn.FlatAppearance.BorderSize = 0;
-            this.searchBookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchBookBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBookBtn.Location = new System.Drawing.Point(209, 479);
-            this.searchBookBtn.Name = "searchBookBtn";
-            this.searchBookBtn.Size = new System.Drawing.Size(110, 47);
-            this.searchBookBtn.TabIndex = 12;
-            this.searchBookBtn.Text = "Search";
-            this.searchBookBtn.UseVisualStyleBackColor = false;
+            this.updateBookBtn.BackColor = System.Drawing.Color.White;
+            this.updateBookBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateBookBtn.FlatAppearance.BorderSize = 0;
+            this.updateBookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBookBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBookBtn.Location = new System.Drawing.Point(122, 558);
+            this.updateBookBtn.Name = "updateBookBtn";
+            this.updateBookBtn.Size = new System.Drawing.Size(110, 47);
+            this.updateBookBtn.TabIndex = 12;
+            this.updateBookBtn.Text = "Update";
+            this.updateBookBtn.UseVisualStyleBackColor = false;
+            this.updateBookBtn.Click += new System.EventHandler(this.updateBookBtn_Click);
             // 
-            // editBookBtn
+            // deleteBookBtn
             // 
-            this.editBookBtn.BackColor = System.Drawing.Color.White;
-            this.editBookBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.editBookBtn.FlatAppearance.BorderSize = 0;
-            this.editBookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editBookBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBookBtn.Location = new System.Drawing.Point(19, 558);
-            this.editBookBtn.Name = "editBookBtn";
-            this.editBookBtn.Size = new System.Drawing.Size(110, 47);
-            this.editBookBtn.TabIndex = 12;
-            this.editBookBtn.Text = "Edit";
-            this.editBookBtn.UseVisualStyleBackColor = false;
-            // 
-            // markBookBtn
-            // 
-            this.markBookBtn.BackColor = System.Drawing.Color.White;
-            this.markBookBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.markBookBtn.FlatAppearance.BorderSize = 0;
-            this.markBookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.markBookBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.markBookBtn.Location = new System.Drawing.Point(209, 558);
-            this.markBookBtn.Name = "markBookBtn";
-            this.markBookBtn.Size = new System.Drawing.Size(110, 47);
-            this.markBookBtn.TabIndex = 12;
-            this.markBookBtn.Text = "Mark";
-            this.markBookBtn.UseVisualStyleBackColor = false;
+            this.deleteBookBtn.BackColor = System.Drawing.Color.White;
+            this.deleteBookBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteBookBtn.FlatAppearance.BorderSize = 0;
+            this.deleteBookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteBookBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBookBtn.Location = new System.Drawing.Point(238, 558);
+            this.deleteBookBtn.Name = "deleteBookBtn";
+            this.deleteBookBtn.Size = new System.Drawing.Size(110, 47);
+            this.deleteBookBtn.TabIndex = 12;
+            this.deleteBookBtn.Text = "Delete";
+            this.deleteBookBtn.UseVisualStyleBackColor = false;
+            this.deleteBookBtn.Click += new System.EventHandler(this.deleteBookBtn_Click);
             // 
             // label5
             // 
@@ -403,6 +312,13 @@
             // categoryComBox
             // 
             this.categoryComBox.FormattingEnabled = true;
+            this.categoryComBox.Items.AddRange(new object[] {
+            "Fiction",
+            "Romance",
+            "Classic",
+            "History",
+            "Business",
+            "Fantasy"});
             this.categoryComBox.Location = new System.Drawing.Point(29, 374);
             this.categoryComBox.Name = "categoryComBox";
             this.categoryComBox.Size = new System.Drawing.Size(219, 21);
@@ -412,24 +328,100 @@
             // 
             this.bookTableAdapter.ClearBeforeFill = true;
             // 
+            // staffBookSearchTxt
+            // 
+            this.staffBookSearchTxt.Location = new System.Drawing.Point(466, 154);
+            this.staffBookSearchTxt.Name = "staffBookSearchTxt";
+            this.staffBookSearchTxt.Size = new System.Drawing.Size(328, 20);
+            this.staffBookSearchTxt.TabIndex = 16;
+            this.staffBookSearchTxt.TextChanged += new System.EventHandler(this.staffBookSearchTxt_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(15, 417);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 22);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "ISBN";
+            // 
+            // isbnTxtBox
+            // 
+            this.isbnTxtBox.Location = new System.Drawing.Point(29, 457);
+            this.isbnTxtBox.Name = "isbnTxtBox";
+            this.isbnTxtBox.Size = new System.Drawing.Size(219, 20);
+            this.isbnTxtBox.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(358, 144);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 30);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Search:";
+            // 
+            // roundPictureBox1
+            // 
+            this.roundPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundPictureBox1.Image")));
+            this.roundPictureBox1.Location = new System.Drawing.Point(1131, 25);
+            this.roundPictureBox1.Name = "roundPictureBox1";
+            this.roundPictureBox1.Size = new System.Drawing.Size(53, 70);
+            this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.roundPictureBox1.TabIndex = 2;
+            this.roundPictureBox1.TabStop = false;
+            // 
+            // searchByCB
+            // 
+            this.searchByCB.FormattingEnabled = true;
+            this.searchByCB.Items.AddRange(new object[] {
+            "Book_ID",
+            "Title",
+            "Author",
+            "ISBN",
+            "Category"});
+            this.searchByCB.Location = new System.Drawing.Point(953, 154);
+            this.searchByCB.Name = "searchByCB";
+            this.searchByCB.Size = new System.Drawing.Size(228, 21);
+            this.searchByCB.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(811, 145);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(136, 30);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Search By:";
+            // 
             // StaffBooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1193, 617);
+            this.Controls.Add(this.searchByCB);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.staffBookSearchTxt);
             this.Controls.Add(this.categoryComBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.isbnTxtBox);
             this.Controls.Add(this.authorTxtBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.titleTxtBox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.markBookBtn);
-            this.Controls.Add(this.editBookBtn);
-            this.Controls.Add(this.searchBookBtn);
+            this.Controls.Add(this.deleteBookBtn);
+            this.Controls.Add(this.updateBookBtn);
             this.Controls.Add(this.addBookBtn);
             this.Controls.Add(this.staffBooksList);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.draggingBar);
             this.Controls.Add(this.pictureBox3);
@@ -448,11 +440,10 @@
             this.Load += new System.EventHandler(this.Dashboard_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBooksList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lMSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,12 +462,10 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel draggingBar;
         private System.Windows.Forms.Label logoutBtn;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView staffBooksList;
         private System.Windows.Forms.Button addBookBtn;
-        private System.Windows.Forms.Button searchBookBtn;
-        private System.Windows.Forms.Button editBookBtn;
-        private System.Windows.Forms.Button markBookBtn;
+        private System.Windows.Forms.Button updateBookBtn;
+        private System.Windows.Forms.Button deleteBookBtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox titleTxtBox;
         private System.Windows.Forms.Label label6;
@@ -486,12 +475,11 @@
         private LMSDataSet lMSDataSet;
         private System.Windows.Forms.BindingSource bookBindingSource;
         private LMSDataSetTableAdapters.BookTableAdapter bookTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bookIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn authorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isBorrowedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox staffBookSearchTxt;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox isbnTxtBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox searchByCB;
+        private System.Windows.Forms.Label label9;
     }
 }

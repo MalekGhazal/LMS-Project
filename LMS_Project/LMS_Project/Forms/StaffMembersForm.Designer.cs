@@ -40,23 +40,16 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.draggingBar = new System.Windows.Forms.Panel();
             this.logoutBtn = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.staffUsersList = new System.Windows.Forms.DataGridView();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userLnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userFnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.User_Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lMSDataSet = new LMS_Project.LMSDataSet();
             this.lendUserBtn = new System.Windows.Forms.Button();
             this.addMemberBtn = new System.Windows.Forms.Button();
             this.userTableAdapter = new LMS_Project.LMSDataSetTableAdapters.UserTableAdapter();
+            this.applicationsBtn = new System.Windows.Forms.Button();
             this.roundPictureBox1 = new LMS_Project.Classes.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffUsersList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lMSDataSet)).BeginInit();
@@ -73,7 +66,6 @@
             this.label1.Size = new System.Drawing.Size(83, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // userFnameLabel
             // 
@@ -188,83 +180,20 @@
             this.logoutBtn.Text = "Log out";
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(19, 59);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 27);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // staffUsersList
             // 
             this.staffUsersList.AllowUserToAddRows = false;
             this.staffUsersList.AllowUserToDeleteRows = false;
-            this.staffUsersList.AutoGenerateColumns = false;
             this.staffUsersList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.staffUsersList.BackgroundColor = System.Drawing.Color.White;
             this.staffUsersList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.staffUsersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.staffUsersList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userIDDataGridViewTextBoxColumn,
-            this.userLnameDataGridViewTextBoxColumn,
-            this.userFnameDataGridViewTextBoxColumn,
-            this.userPhoneDataGridViewTextBoxColumn,
-            this.userEmailDataGridViewTextBoxColumn,
-            this.User_Role});
-            this.staffUsersList.DataSource = this.userBindingSource;
             this.staffUsersList.Location = new System.Drawing.Point(19, 127);
             this.staffUsersList.Name = "staffUsersList";
             this.staffUsersList.ReadOnly = true;
             this.staffUsersList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.staffUsersList.Size = new System.Drawing.Size(1162, 369);
             this.staffUsersList.TabIndex = 12;
-            // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "User ID";
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // userLnameDataGridViewTextBoxColumn
-            // 
-            this.userLnameDataGridViewTextBoxColumn.DataPropertyName = "User_Lname";
-            this.userLnameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.userLnameDataGridViewTextBoxColumn.Name = "userLnameDataGridViewTextBoxColumn";
-            this.userLnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // userFnameDataGridViewTextBoxColumn
-            // 
-            this.userFnameDataGridViewTextBoxColumn.DataPropertyName = "User_Fname";
-            this.userFnameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.userFnameDataGridViewTextBoxColumn.Name = "userFnameDataGridViewTextBoxColumn";
-            this.userFnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // userPhoneDataGridViewTextBoxColumn
-            // 
-            this.userPhoneDataGridViewTextBoxColumn.DataPropertyName = "User_Phone";
-            this.userPhoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.userPhoneDataGridViewTextBoxColumn.Name = "userPhoneDataGridViewTextBoxColumn";
-            this.userPhoneDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // userEmailDataGridViewTextBoxColumn
-            // 
-            this.userEmailDataGridViewTextBoxColumn.DataPropertyName = "User_Email";
-            this.userEmailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.userEmailDataGridViewTextBoxColumn.Name = "userEmailDataGridViewTextBoxColumn";
-            this.userEmailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // User_Role
-            // 
-            this.User_Role.DataPropertyName = "User_Role";
-            this.User_Role.HeaderText = "Role";
-            this.User_Role.Name = "User_Role";
-            this.User_Role.ReadOnly = true;
             // 
             // userBindingSource
             // 
@@ -285,13 +214,13 @@
             this.lendUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lendUserBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lendUserBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
-            this.lendUserBtn.Location = new System.Drawing.Point(317, 540);
+            this.lendUserBtn.Location = new System.Drawing.Point(128, 540);
             this.lendUserBtn.Name = "lendUserBtn";
             this.lendUserBtn.Size = new System.Drawing.Size(260, 41);
             this.lendUserBtn.TabIndex = 5;
             this.lendUserBtn.Text = "Lend a User";
             this.lendUserBtn.UseVisualStyleBackColor = false;
-            this.lendUserBtn.Click += new System.EventHandler(this.staffBooksBtn_Click);
+            this.lendUserBtn.Click += new System.EventHandler(this.lendUserBtn_Click);
             // 
             // addMemberBtn
             // 
@@ -302,7 +231,7 @@
             this.addMemberBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addMemberBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addMemberBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
-            this.addMemberBtn.Location = new System.Drawing.Point(659, 540);
+            this.addMemberBtn.Location = new System.Drawing.Point(465, 540);
             this.addMemberBtn.Name = "addMemberBtn";
             this.addMemberBtn.Size = new System.Drawing.Size(260, 41);
             this.addMemberBtn.TabIndex = 5;
@@ -313,6 +242,23 @@
             // userTableAdapter
             // 
             this.userTableAdapter.ClearBeforeFill = true;
+            // 
+            // applicationsBtn
+            // 
+            this.applicationsBtn.BackColor = System.Drawing.Color.White;
+            this.applicationsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.applicationsBtn.FlatAppearance.BorderSize = 0;
+            this.applicationsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.applicationsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.applicationsBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.applicationsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(84)))), ((int)(((byte)(127)))));
+            this.applicationsBtn.Location = new System.Drawing.Point(802, 540);
+            this.applicationsBtn.Name = "applicationsBtn";
+            this.applicationsBtn.Size = new System.Drawing.Size(260, 41);
+            this.applicationsBtn.TabIndex = 5;
+            this.applicationsBtn.Text = "Applications";
+            this.applicationsBtn.UseVisualStyleBackColor = false;
+            this.applicationsBtn.Click += new System.EventHandler(this.applicationsBtn_Click);
             // 
             // roundPictureBox1
             // 
@@ -331,11 +277,11 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1193, 617);
             this.Controls.Add(this.staffUsersList);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.draggingBar);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.applicationsBtn);
             this.Controls.Add(this.addMemberBtn);
             this.Controls.Add(this.lendUserBtn);
             this.Controls.Add(this.staffMembersBtn);
@@ -352,7 +298,6 @@
             this.Load += new System.EventHandler(this.Dashboard_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffUsersList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lMSDataSet)).EndInit();
@@ -375,18 +320,12 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel draggingBar;
         private System.Windows.Forms.Label logoutBtn;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView staffUsersList;
         private System.Windows.Forms.Button lendUserBtn;
         private System.Windows.Forms.Button addMemberBtn;
         private LMSDataSet lMSDataSet;
         private System.Windows.Forms.BindingSource userBindingSource;
         private LMSDataSetTableAdapters.UserTableAdapter userTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userLnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userFnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userPhoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userEmailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn User_Role;
+        private System.Windows.Forms.Button applicationsBtn;
     }
 }

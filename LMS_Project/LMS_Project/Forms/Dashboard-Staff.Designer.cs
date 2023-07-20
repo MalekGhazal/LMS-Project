@@ -57,7 +57,6 @@
             this.label1.Size = new System.Drawing.Size(83, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // userNameLabel
             // 

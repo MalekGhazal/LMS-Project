@@ -8,11 +8,17 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LMS_Project.Classes;
+using LMS_Project.DAL;
 
 namespace LMS_Project.Forms
 {
     public partial class DashboardSupplier : Form
     {
+        public string UserFirstName { get; set; }
+        public int UserID { get; internal set; }
+
+        // Rounded corners
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -30,25 +36,22 @@ namespace LMS_Project.Forms
         public DashboardSupplier()
         {
             InitializeComponent();
+            // Rounded corners
             this.FormBorderStyle = FormBorderStyle.None;
             this.Region = System.Drawing.Region
                 .FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Dashboard_Form_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'lMSDataSet.Book' table. You can move, or remove it, as needed.
             this.bookTableAdapter.Fill(this.lMSDataSet.Book);
-            // dashboard buttons (rounded)
+
+            // Rounded Buttons
             suppSellBtn.Region = Region.FromHrgn
                 (CreateRoundRectRgn(0, 0, suppSellBtn.Width, suppSellBtn.Height, 15, 15));
 
             searchByCB.SelectedIndex = 0;
+            suppFirstName.Text = UserFirstName;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -91,8 +94,11 @@ namespace LMS_Project.Forms
             SuppSellBook ssb = new SuppSellBook();
             ssb.Show();
         }
-
-        // Search Book's list Method (Text Changed event)
+        /// <summary>
+        /// Searching the Book's Data grid based on the column selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void searchTxtBox_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(searchTxtBox.Text))
@@ -105,6 +111,7 @@ namespace LMS_Project.Forms
                 string searchValue = searchTxtBox.Text;
                 string filterExpression = "";
 
+                // Book_ID input validation
                 if (columnName == "Book_ID")
                 {
                     if (int.TryParse(searchValue, out int bookId))
@@ -113,7 +120,6 @@ namespace LMS_Project.Forms
                     }
                     else
                     {
-                        // Book_ID input validation
                         MessageBox.Show("Book ID must be a number");
                     }
                 }

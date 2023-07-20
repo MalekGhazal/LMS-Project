@@ -13,6 +13,10 @@ namespace LMS_Project.Forms
 {
     public partial class DashboardUser : Form
     {
+        public string UserFirstName { get; set; }
+        public int UserID { get; internal set; }
+
+        // Rounded corners
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -30,23 +34,18 @@ namespace LMS_Project.Forms
         public DashboardUser()
         {
             InitializeComponent();
+            // Rounded corners
             this.FormBorderStyle = FormBorderStyle.None;
             this.Region = System.Drawing.Region
                 .FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Dashboard_Form_Load(object sender, EventArgs e)
         {
-            // Adimn dashboard buttons (rounded)
-            staffBooksBtn.Region = Region.FromHrgn
-                (CreateRoundRectRgn(0, 0, staffBooksBtn.Width, staffBooksBtn.Height, 15, 15));
-            staffMembersBtn.Region = Region.FromHrgn
-                (CreateRoundRectRgn(0, 0, staffMembersBtn.Width, staffMembersBtn.Height, 15, 15));
+            userFirstName.Text = UserFirstName;
+            // Rounded Buttons
+            userMyBooksBtn.Region = Region.FromHrgn
+                (CreateRoundRectRgn(0, 0, userMyBooksBtn.Width, userMyBooksBtn.Height, 15, 15));
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -82,6 +81,16 @@ namespace LMS_Project.Forms
             Login_Form login = new Login_Form();
             this.Close();
             login.Show();
+        }
+
+        private void userMyBooksBtn_Click(object sender, EventArgs e)
+        {
+            UserBooks ubf = new UserBooks();
+            ubf.UserFirstName = UserFirstName;
+            this.Close();
+            ubf.Show();
+            // Passing the logged in user's ID to the UserBooks form
+            ubf.currentUserID = UserID;
         }
         //
     }

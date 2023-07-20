@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.loginCloseBtn = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
             this.passwordTxtBox = new System.Windows.Forms.TextBox();
             this.usernameTxtBox = new System.Windows.Forms.TextBox();
             this.clearBtn = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.loginCloseBtn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +55,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(267, 464);
             this.panel1.TabIndex = 0;
+            // 
+            // loginCloseBtn
+            // 
+            this.loginCloseBtn.AutoSize = true;
+            this.loginCloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginCloseBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginCloseBtn.ForeColor = System.Drawing.Color.White;
+            this.loginCloseBtn.Location = new System.Drawing.Point(5, 5);
+            this.loginCloseBtn.Name = "loginCloseBtn";
+            this.loginCloseBtn.Size = new System.Drawing.Size(29, 17);
+            this.loginCloseBtn.TabIndex = 3;
+            this.loginCloseBtn.Text = "Exit";
+            this.loginCloseBtn.Click += new System.EventHandler(this.loginCloseBtn_Click);
             // 
             // loginBtn
             // 
@@ -132,19 +145,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // loginCloseBtn
-            // 
-            this.loginCloseBtn.AutoSize = true;
-            this.loginCloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.loginCloseBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginCloseBtn.ForeColor = System.Drawing.Color.White;
-            this.loginCloseBtn.Location = new System.Drawing.Point(5, 5);
-            this.loginCloseBtn.Name = "loginCloseBtn";
-            this.loginCloseBtn.Size = new System.Drawing.Size(29, 17);
-            this.loginCloseBtn.TabIndex = 3;
-            this.loginCloseBtn.Text = "Exit";
-            this.loginCloseBtn.Click += new System.EventHandler(this.loginCloseBtn_Click);
             // 
             // Login_Form
             // 
