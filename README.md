@@ -2,7 +2,7 @@
 ## Vanier College Project
 
 ### Overview
-The Library Management System is a desktop application developed as part of the Application Development (Desktop) class at Vanier College. The goal of this project is to create a user-friendly system to manage library operations, including book management, user membership, borrowing, and returning books.
+The Library Management System is a desktop application developed as part of the Application Development (Desktop) class at Vanier College. The goal of this project is to create a user-friendly system to manage library operations, including book management, user membership, borrowing, and returning books. The project follows the Model-View-Controller **(MVC)** design pattern.
 
 ### Team Members
 * Wei Jin
