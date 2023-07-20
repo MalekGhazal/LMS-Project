@@ -25,7 +25,8 @@ The Library Management System is a desktop application developed as part of the 
 ### How to Run
 - Clone the repository to your local machine.
 - Open the solution file (.sln) in Visual Studio.
-- Set up the database and replace the connection string in the App.config file with yours.
+- Set up the database and replace the connection string in the **App.config** file with yours.
+- Consider changing the Connection String in **Properties/Settings.settings** file too.
 ```C#
 <connectionStrings>
         <add name="ConnString" connectionString="Data Source=<Server Name>;Initial Catalog=<Database Name>;Integrated Security=True"
