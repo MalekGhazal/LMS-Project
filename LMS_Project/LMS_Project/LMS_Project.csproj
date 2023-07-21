@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>book-icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
@@ -54,19 +57,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\BookRepository.cs" />
-    <Compile Include="DAL\MyDB.cs" />
-    <Compile Include="DAL\UserRepository.cs" />
-    <Compile Include="Forms\Applications.cs">
+    <Compile Include="Controller\BookRepository.cs" />
+    <Compile Include="Controller\MyDB.cs" />
+    <Compile Include="Controller\UserRepository.cs" />
+    <Compile Include="View\Applications.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Applications.Designer.cs">
+    <Compile Include="View\Applications.Designer.cs">
       <DependentUpon>Applications.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LendUser.cs">
+    <Compile Include="View\LendUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LendUser.Designer.cs">
+    <Compile Include="View\LendUser.Designer.cs">
       <DependentUpon>LendUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Book.cs" />
@@ -75,58 +78,58 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Models\User.cs" />
-    <Compile Include="Forms\SuppSellBook.cs">
+    <Compile Include="View\SuppSellBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SuppSellBook.Designer.cs">
+    <Compile Include="View\SuppSellBook.Designer.cs">
       <DependentUpon>SuppSellBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UserBooks.cs">
+    <Compile Include="View\UserBooks.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UserBooks.Designer.cs">
+    <Compile Include="View\UserBooks.Designer.cs">
       <DependentUpon>UserBooks.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StaffMembersForm.cs">
+    <Compile Include="View\StaffMembersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StaffMembersForm.Designer.cs">
+    <Compile Include="View\StaffMembersForm.Designer.cs">
       <DependentUpon>StaffMembersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StaffBooksForm.cs">
+    <Compile Include="View\StaffBooksForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StaffBooksForm.Designer.cs">
+    <Compile Include="View\StaffBooksForm.Designer.cs">
       <DependentUpon>StaffBooksForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DashboardSupplier.cs">
+    <Compile Include="View\DashboardSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DashboardSupplier.Designer.cs">
+    <Compile Include="View\DashboardSupplier.Designer.cs">
       <DependentUpon>DashboardSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DashboardUser.cs">
+    <Compile Include="View\DashboardUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DashboardUser.Designer.cs">
+    <Compile Include="View\DashboardUser.Designer.cs">
       <DependentUpon>DashboardUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Dashboard-Staff.cs">
+    <Compile Include="View\Dashboard-Staff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Dashboard-Staff.Designer.cs">
+    <Compile Include="View\Dashboard-Staff.Designer.cs">
       <DependentUpon>Dashboard-Staff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Loading-Form.cs">
+    <Compile Include="View\Loading-Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Loading-Form.Designer.cs">
+    <Compile Include="View\Loading-Form.Designer.cs">
       <DependentUpon>Loading-Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Login-Form.cs">
+    <Compile Include="View\Login-Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Login-Form.Designer.cs">
+    <Compile Include="View\Login-Form.Designer.cs">
       <DependentUpon>Login-Form.cs</DependentUpon>
     </Compile>
     <Compile Include="LMSDataSet.Designer.cs">
@@ -136,37 +139,37 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Applications.resx">
+    <EmbeddedResource Include="View\Applications.resx">
       <DependentUpon>Applications.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LendUser.resx">
+    <EmbeddedResource Include="View\LendUser.resx">
       <DependentUpon>LendUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SuppSellBook.resx">
+    <EmbeddedResource Include="View\SuppSellBook.resx">
       <DependentUpon>SuppSellBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserBooks.resx">
+    <EmbeddedResource Include="View\UserBooks.resx">
       <DependentUpon>UserBooks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StaffMembersForm.resx">
+    <EmbeddedResource Include="View\StaffMembersForm.resx">
       <DependentUpon>StaffMembersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StaffBooksForm.resx">
+    <EmbeddedResource Include="View\StaffBooksForm.resx">
       <DependentUpon>StaffBooksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DashboardSupplier.resx">
+    <EmbeddedResource Include="View\DashboardSupplier.resx">
       <DependentUpon>DashboardSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DashboardUser.resx">
+    <EmbeddedResource Include="View\DashboardUser.resx">
       <DependentUpon>DashboardUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dashboard-Staff.resx">
+    <EmbeddedResource Include="View\Dashboard-Staff.resx">
       <DependentUpon>Dashboard-Staff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Loading-Form.resx">
+    <EmbeddedResource Include="View\Loading-Form.resx">
       <DependentUpon>Loading-Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Login-Form.resx">
+    <EmbeddedResource Include="View\Login-Form.resx">
       <DependentUpon>Login-Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -205,6 +208,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="book-icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
