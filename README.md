@@ -2,7 +2,7 @@
 ## Vanier College Project
 
 ### Overview
-The Library Management System is a desktop application developed as part of the Application Development (Desktop) class at Vanier College. The goal of this project is to create a user-friendly system to manage library operations, including book management, user membership, borrowing, and returning books. The project follows the Model-View-Controller **(MVC)** design pattern.
+The Library Management System is a desktop application developed as part of the Application Development (Desktop) class at Vanier College. This project aims to create a user-friendly system to manage library operations, including book management, user membership, borrowing, and returning books. The project follows the Model-View-Controller **(MVC)** design pattern.
 
 ### Team Members
 * Wei Jin
@@ -11,11 +11,12 @@ The Library Management System is a desktop application developed as part of the 
 
 ### Features
 - Login functionality for staff, suppliers, and regular users.
-- Staff members can add, update, and remove books from the library.
-- Regular users can search for and borrow books from the library.
+- Staff members can search, add, update, and remove books from the library.
+- Regular users can search for and borrow books from/return books to the library.
 - Membership application process for users to become library members.
 - Staff members can review and accept/reject membership applications.
-- Books can be borrowed and returned by users with tracking of due dates.
+- Staff members can view the list of users, and grant membership to a user.
+- Suppliers can search for a book, and sell a book to the library.
 
 ### Technologies Used
 - C# programming language
