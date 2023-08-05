@@ -69,6 +69,11 @@ namespace LMS_Project.Forms
             List<User> users = userRepository.GetAllUsers();
 
             staffUsersList.DataSource = users;
+
+            if (staffUsersList.Columns.Contains("Password"))
+            {
+                staffUsersList.Columns["Password"].Visible = false;
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

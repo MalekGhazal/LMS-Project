@@ -73,6 +73,11 @@ namespace LMS_Project.Forms
             allBooks = bookRepository.GetAllBooks();
 
             staffBooksList.DataSource = allBooks;
+
+            if (staffBooksList.Columns.Contains("UserID"))
+            {
+                staffBooksList.Columns["UserID"].Visible = false;
+            }
         }
 
 

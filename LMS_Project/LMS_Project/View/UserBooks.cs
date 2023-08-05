@@ -55,6 +55,8 @@ namespace LMS_Project.Forms
                 (CreateRoundRectRgn(0, 0, userBorrowBtn.Width, userBorrowBtn.Height, 15, 15));
             returnBookBtn.Region = Region.FromHrgn
                 (CreateRoundRectRgn(0, 0, returnBookBtn.Width, returnBookBtn.Height, 15, 15));
+            myBooksBtn.Region = Region.FromHrgn
+                (CreateRoundRectRgn(0, 0, myBooksBtn.Width, myBooksBtn.Height, 15, 15));
 
             userSearchByCB.SelectedIndex = 0;
             userFNameTxt.Text = UserFirstName;
@@ -176,31 +178,36 @@ namespace LMS_Project.Forms
             }
         }
         /// <summary>
-        /// When a user clicks on Return a Book, the books he borrowed will be retrieved from the DB and he selects which book he wants to return
-        /// then the book record of which he returned will remove his User_ID and change isBorrowed field back to False indicating that this book is available again
+        /// This button loads the books of which the current user has borrowed and clears the selection.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void returnBookBtn_Click(object sender, EventArgs e)
+        private void myBooksBtn_Click(object sender, EventArgs e)
         {
             this.bookTableAdapter.FillByUserID(this.lMSDataSet.Book, currentUserID);
+            userBooksList.ClearSelection();
 
             // Check if the user has any books borrowed
             if (userBooksList.Rows.Count == 0)
             {
                 MessageBox.Show("You haven't borrowed any books.", "Return Book", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Refresh
-                this.bookTableAdapter.Fill(this.lMSDataSet.Book);
-                return;
             }
-
+        }
+        /// <summary>
+        /// After loading the user's books, selecting a book record (row) then pressing return a book
+        /// will show a confirmation message then returns the book.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void returnBookBtn_Click(object sender, EventArgs e)
+        {
             // Check if any book record is selected
             if (userBooksList.SelectedRows.Count > 0)
             {
                 // Retrieve the book ID from the selected row
                 int bookID = Convert.ToInt32(userBooksList.SelectedRows[0].Cells["Book_ID"].Value);
 
-                // Prompt the user to confirm returning the book
+                // Confirm returning the book
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to return this book?", "Return Book Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (dialogResult == DialogResult.Yes)
@@ -212,6 +219,10 @@ namespace LMS_Project.Forms
                     if (success)
                     {
                         MessageBox.Show("You have successfully returned the book.", "Return Book", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Refresh
+                        this.bookTableAdapter.Fill(this.lMSDataSet.Book);
+                        userBooksList.ClearSelection();
                     }
                     else
                     {
@@ -223,8 +234,7 @@ namespace LMS_Project.Forms
             {
                 MessageBox.Show("Please select a book to return.", "Return Book", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            // Refresh the data grid view
-            this.bookTableAdapter.Fill(this.lMSDataSet.Book);
+            
         }
         /// <summary>
         /// When a user clicks on this button, the user will apply for a membership, it will check first if he is already a member
