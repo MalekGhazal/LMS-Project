@@ -41,4 +41,36 @@ If you encounter any issues or have questions, please feel free to contact any o
 
 
 
+## Example Accounts Login Information (all passwords are '123456')
+User		joe123       
+User		aldo456	
+User		alaina456
+Supplier	evie789
+Supplier	lara789  
+Staff		Wei
+Staff		Malek  
+
+## User Walkthrough
+-After logging in click on books
+-You can search the book catalog by Book_ID, Title, Author, Category, or ISBN
+-Select a book and click the borrow button to borrow the book (if it is available)
+-To return a book click the Return a Book button
+-To apply for membership click the "Become a Member" button
+
+## Staff Walkthrough
+-Through the 'Manage Books' button:
+-You can search the book catalog by Book_ID, Title, Author, Category, or ISBN
+-You can add a book with the data entry text boxes and the 'Add' button
+-You can update a book by selecting it in the table and updating the data in the textboxes then hitting the 'Update' button
+-You can delete a book by selecting it in the table and clicking the 'delete' button
+-Through the 'Manage Members' button:
+-You can select a user and click the "Lend a User' button to see that book catalog and select a book to lend them
+-You can add them as a member by selecting them and clicking 'Add as Member'
+-You can see the current list of applicants with the 'Applications' button which lets you accept or reject their application
+
+## Supplier Walkthrough
+-You can search the book catalog by Book_ID, Title, Author, Category, or ISBN
+-Sell a book by clicking that button and then inputting the book information in the form
+
+## Thanks for visiting our library!
 
